@@ -1,0 +1,89 @@
+---
+title: "P8105 HW4 Dashboard"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+runtime: shiny
+---
+
+```{r}
+
+library(tidyverse)
+library(plotly)
+library(flexdashboard)
+library(p8105.datasets)
+
+# Load dataset (choose one — here we use Instacart)
+data("instacart")
+
+# Randomly sample 3000 rows to make plots faster
+instacart_small <- instacart |> sample_n(3000)
+
+
+```
+
+---
+
+## Add dashboard sections
+
+
+### **Column 1: Bar Plot**
+```{r}
+### Orders by Department
+
+instacart_small |> 
+  count(department) |> 
+  plot_ly(
+    x = ~department,
+    y = ~n,
+    type = "bar",
+    color = ~department
+  ) |> 
+  layout(
+    title = "Number of Orders by Department",
+    xaxis = list(title = "Department"),
+    yaxis = list(title = "Count of Orders")
+  )
+
+```
+### **Column 2: Box Plot**
+```{r}
+
+### Add-to-Cart Order Distribution by Department
+instacart_small |> 
+  plot_ly(
+    x = ~department,
+    y = ~add_to_cart_order,
+    type = "box",
+    color = ~department
+  ) |> 
+  layout(
+    title = "Add-to-Cart Order Distribution",
+    xaxis = list(title = "Department"),
+    yaxis = list(title = "Add-to-Cart Order")
+  )
+
+```
+### **Column 3: Scatter Plot**
+```{r}
+
+### Aisle vs Add-to-Cart Order
+
+instacart_small |> 
+  plot_ly(
+    x = ~aisle_id,
+    y = ~add_to_cart_order,
+    type = "scatter",
+    mode = "markers",
+    color = ~department
+  ) |> 
+  layout(
+    title = "Aisle vs Add-to-Cart Order",
+    xaxis = list(title = "Aisle ID"),
+    yaxis = list(title = "Add-to-Cart Order")
+  )
+
+
+```
+
