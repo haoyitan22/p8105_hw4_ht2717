@@ -11,10 +11,11 @@ navbar:
     - icon: fa-github
       href: https://github.com/haoyitan22
     - icon: fa-envelope
-      href: mailto:haoyitan22@umich.edu
+      href: mailto:haoyitan22@gmail.com
     - icon: fa-linkedin
-      href: https://www.linkedin.com/in/your-linkedin-id/
+      href: https://www.linkedin.com/in/haoyi-cathy-tan-97322a28b/
 output:
   html_document:
     theme: flatly
     toc: false
+    

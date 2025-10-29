@@ -9,5 +9,8 @@ output: html_document
 
 Hi, my name is Haoyi Tan. I’m currently pursuing a Master’s in **Biostatistics** at Columbia University. I completed my undergraduate studies in Statistics at the University of Michigan, Ann Arbor. Outside of academics, I enjoy skiing, playing tennis, and doing Pilates.
 
-This website showcases my academic background and professional experiences.  
+This website showcases my academic background and professional experiences. 
+
+You can find my resume [here](resume.html), or connect with me via [GitHub](https://github.com/haoyitan22) or [LinkedIn](https://www.linkedin.com/in/haoyi-cathy-tan-97322a28b/).
+
 Feel free to explore my projects or connect with me through GitHub or LinkedIn!
