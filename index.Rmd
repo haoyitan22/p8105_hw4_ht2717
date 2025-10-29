@@ -1,0 +1,13 @@
+---
+title: "Welcome to My Website"
+author: "Haoyi Tan"
+date: "2025-10-29"
+output: html_document
+---
+
+## Hi, I'm Haoyi (Cathy) Tan 👋
+
+Hi, my name is Haoyi Tan. I’m currently pursuing a Master’s in **Biostatistics** at Columbia University. I completed my undergraduate studies in Statistics at the University of Michigan, Ann Arbor. Outside of academics, I enjoy skiing, playing tennis, and doing Pilates.
+
+This website showcases my academic background and professional experiences.  
+Feel free to explore my projects or connect with me through GitHub or LinkedIn!

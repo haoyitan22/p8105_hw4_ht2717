@@ -1,0 +1,32 @@
+---
+title: "Resume"
+author: "Haoyi Tan"
+output: html_document
+---
+---
+title: "Resume"
+output: html_document
+---
+
+## Education
+- **University of Columbia**, MS in Biostatistics
+  *2025 - 2027*
+- **University of Michigan**, B.A. in Psychology (Minor in Statistics)  
+  *2021 – 2025*
+
+## Experience
+
+- **Founder, Friends of You**  
+  Led an AI-based psychological support platform with 400+ users and 65% retention.  
+  Managed 8-member team, coordinated psychiatrists, and developed community engagement features.
+
+- **Research Assistant, Mt. Hope Family Center**  
+  Studied interparental conflict and its effects on children’s emotional regulation.
+
+- **Course Projects**
+  - *Housing Price Forecasting*: Built a regression model to predict housing prices based on location and property features.  
+  - *Business Analytics Case Studies*: Applied data visualization and model diagnostics in R.
+
+## Skills
+
+R, Python, SQL, Tableau, Git, R Markdown, Figma, Data Visualization, Statistical Modeling

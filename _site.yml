@@ -1,0 +1,20 @@
+name: "Haoyi Tan"
+output_dir: "docs"
+navbar:
+  title: "Haoyi Tan"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Resume"
+      href: resume.html
+  right:
+    - icon: fa-github
+      href: https://github.com/haoyitan22
+    - icon: fa-envelope
+      href: mailto:haoyitan22@umich.edu
+    - icon: fa-linkedin
+      href: https://www.linkedin.com/in/your-linkedin-id/
+output:
+  html_document:
+    theme: flatly
+    toc: false
