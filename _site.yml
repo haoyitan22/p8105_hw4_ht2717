@@ -7,6 +7,9 @@ navbar:
       href: index.html
     - text: "Resume"
       href: resume.html
+    - text: "Dashboard"
+      href: dashboard/index.html
+      
   right:
     - icon: fa-github
       href: https://github.com/haoyitan22
