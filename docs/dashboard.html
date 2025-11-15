@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>P8105 HW4 Dashboard</title>
+
+<meta property="og:title" content="P8105 HW4 Dashboard" />
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+<link rel="icon" href="data:image/x-icon;" type="image/x-icon">
+
+
+<script type="text/javascript">
+window.FlexDashboardComponents = [];
+</script>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
+<link href="site_libs/value-box-accent-static-0.6.2/theme-cosmo-value-box.css" rel="stylesheet" />
+<link href="site_libs/flexdashboard-css-0.6.2/flexdashboard.min.css" rel="stylesheet" />
+<link href="site_libs/flexdashboard-css-0.6.2/theme-cosmo.css" rel="stylesheet" />
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.11.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<style type="text/css">
+/*
+  CSS for flexdashboard.js' use of Sly(). The sizing/position of this CSS needs to be
+  applied _before_ flexdashboard.js initializes, which is why this CSS has been pulled
+  out from flexdashboard.scss and inlined in the document's head.
+*/
+
+.storyboard-nav button {
+  background: transparent;
+  border: 0;
+  opacity: .3;
+  outline: none;
+  padding: 0;
+}
+
+.storyboard-nav button:hover,
+.storyboard-nav button:hover {
+  opacity: .5;
+}
+
+.storyboard-nav button:disabled,
+.storyboard-nav button:disabled {
+  opacity: .1;
+}
+
+.storyboard-nav .sbnext,
+.storyboard-nav .sbprev {
+  float: left;
+  width: 2%;
+  height: 120px;
+}
+
+.storyboard-nav .sbprev {
+  text-align: left;
+  width: 2%;
+}
+
+.storyboard-nav .sbnext {
+  float: right;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.storyboard-nav .sbframelist {
+  margin: 0 auto;
+  width: 94%;
+  height: 120px;
+  overflow: hidden;
+  text-shadow: none;
+  margin-bottom: 8px;
+}
+
+.storyboard-nav .sbframelist ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.storyboard-nav .sbframelist ul li {
+  float: left;
+  width: 270px;
+  height: 100%;
+  padding: 10px 10px 10px 10px;
+  margin-right: 8px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.storyboard-nav .sbframelist ul li:last-child {
+  margin-right: 0px;
+}
+
+.sbframe-commentary {
+  width: 300px;
+}
+
+.sbframe-commentary ul {
+  padding-left: 22px;
+}
+
+.sbframe.active {
+  display: flex;
+}
+
+.sbframe:not(.active) {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+html, body {
+  height: 100%;
+}
+
+#dashboard-container {
+  height: 100%;
+}
+}
+</style>
+
+
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+
+<span class="navbar-logo pull-left">
+  
+</span>
+<span class="navbar-brand">
+  P8105 HW4 Dashboard
+  <span class="navbar-author">
+        </span>
+</span>
+
+<button id="navbar-button" type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+</div>
+<div id="navbar" class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-left">
+</ul>
+<ul class="nav navbar-nav navbar-right">
+</ul>
+</div><!--/.nav-collapse-->
+</div><!--/.container-->
+</div><!--/.navbar-->
+
+<script type="text/javascript">
+
+
+var FlexDashboard = (function () {
+
+  // initialize options
+  var _options = {};
+
+  var FlexDashboard = function() {
+
+    // default options
+    _options = $.extend(_options, {
+      theme: "cosmo",
+      fillPage: false,
+      orientation: 'columns',
+      storyboard: false,
+      defaultFigWidth: 576,
+      defaultFigHeight: 461,
+      defaultFigWidthMobile: 360,
+      defaultFigHeightMobile: 461,
+      isMobile: false,
+      isPortrait: false,
+      resize_reload: true
+    });
+  };
+
+  function init(options) {
+
+    // extend default options
+    $.extend(true, _options, options);
+
+    // add ids to sections that don't have them (pandoc won't assign ids
+    // to e.g. sections with titles consisting of only chinese characters)
+    var nextId = 1;
+    $('.level1:not([id]),.level2:not([id]),.level3:not([id])').each(function() {
+      $(this).attr('id', 'dashboard-' + nextId++);
+    });
+
+    // find navbar items
+    var navbarItems = $('#flexdashboard-navbar');
+    if (navbarItems.length)
+      navbarItems = JSON.parse(navbarItems.html());
+    addNavbarItems(navbarItems);
+
+    // find the main dashboard container
+    var dashboardContainer = $('#dashboard-container');
+
+    // resolve mobile classes
+    resolveMobileClasses(dashboardContainer);
+
+    // one time global initialization for components
+    componentsInit(dashboardContainer);
+
+    // look for a global sidebar
+    var globalSidebar = dashboardContainer.find(".section.level1.sidebar");
+    if (globalSidebar.length > 0) {
+
+      // global layout for fullscreen displays
+      if (!isMobilePhone()) {
+
+         // hoist it up to the top level
+         globalSidebar.insertBefore(dashboardContainer);
+
+         // lay it out (set width/positions)
+         layoutSidebar(globalSidebar, dashboardContainer);
+
+      // tuck sidebar into first page for mobile phones
+      } else {
+
+        // convert it into a level3 section
+        globalSidebar.removeClass('sidebar');
+        globalSidebar.removeClass('level1');
+        globalSidebar.addClass('level3');
+        var h1 = globalSidebar.children('h1');
+        var h3 = $('<h3></h3>');
+        h3.append(h1.contents());
+        h3.insertBefore(h1);
+        h1.detach();
+
+        // move it into the first page
+        var page = dashboardContainer.find('.section.level1').first();
+        if (page.length > 0)
+          page.prepend(globalSidebar);
+      }
+    }
+
+    // look for pages to layout
+    var pages = $('div.section.level1');
+    if (pages.length > 0) {
+
+        // find the navbar and collapse on clicked
+        var navbar = $('#navbar');
+        navbar.on("click", "a[data-toggle!=dropdown]", null, function () {
+           navbar.collapse('hide');
+        });
+
+        // envelop the dashboard container in a tab content div
+        dashboardContainer.wrapInner('<div class="tab-content"></div>');
+
+        pages.each(function(index) {
+
+          // lay it out
+          layoutDashboardPage($(this));
+
+          // add it to the navbar
+          addToNavbar($(this), index === 0);
+
+        });
+
+    } else {
+
+      // remove the navbar and navbar button if we don't
+      // have any navbuttons
+      if (navbarItems.length === 0) {
+        $('#navbar').remove();
+        $('#navbar-button').remove();
+      }
+
+      // add the storyboard class if requested
+      if (_options.storyboard)
+        dashboardContainer.addClass('storyboard');
+
+      // layout the entire page
+      layoutDashboardPage(dashboardContainer);
+    }
+
+    // if we are in shiny we need to trigger a window resize event to
+    // force correct layout of shiny-bound-output elements
+    if (isShinyDoc())
+      $(window).trigger('resize');
+
+    // make main components visible
+    $('.section.sidebar').css('visibility', 'visible');
+    dashboardContainer.css('visibility', 'visible');
+
+    // handle location hash
+    handleLocationHash();
+
+    // intialize prism highlighting
+    initPrismHighlighting();
+
+    // record mobile and orientation state then register a handler
+    // to refresh if resize_reload is set to true and it changes
+    _options.isMobile = isMobilePhone();
+    _options.isPortrait = isPortrait();
+    if (_options.resize_reload) {
+      $(window).on('resize', function() {
+        if (_options.isMobile !== isMobilePhone() ||
+            _options.isPortrait !== isPortrait()) {
+          window.location.reload();
+        }
+      });
+    } else {
+      // if in desktop mode and resizing to mobile, make sure the heights are 100%
+      // This enforces what `fillpage.css` does for "wider" pages.
+      // Since we are not reloading once the page becomes small, we need to force the height to 100%
+      // This is a new situation introduced when `_options.resize_reload` is `false`
+      if (! _options.isMobile) {
+        // only add if `fillpage.css` was added in the first place
+        if (_options.fillPage) {
+          // fillpage.css
+          $("html,body,#dashboard").css("height", "100%");
+        }
+      }
+    }
+    // trigger layoutcomplete event
+    dashboardContainer.trigger('flexdashboard:layoutcomplete');
+  }
+
+  function resolveMobileClasses(dashboardContainer) {
+     // add top level layout class
+    dashboardContainer.addClass(isMobilePhone() ? 'mobile-layout' :
+                                                  'desktop-layout');
+
+    // look for .mobile sections and add .no-mobile to their peers
+    var mobileSections = $('.section.mobile');
+    mobileSections.each(function() {
+       var id = $(this).attr('id');
+       var nomobileId = id.replace(/-\d+$/, '');
+       $('#' + nomobileId).addClass('no-mobile');
+    });
+  }
+
+  function addNavbarItems(navbarItems) {
+
+    var navbarLeft = $('ul.navbar-left');
+    var navbarRight = $('ul.navbar-right');
+
+    for (var i = 0; i<navbarItems.length; i++) {
+
+      // get the item
+      var item = navbarItems[i];
+
+      // determine the container
+      var container = null;
+      if (item.align === "left")
+        container = navbarLeft;
+      else
+        container = navbarRight;
+
+      // navbar menu if we have multiple items
+      if (item.items) {
+        var menu = navbarMenu(null, item.icon, item.title, container);
+        for (var j = 0; j<item.items.length; j++) {
+          var subItem = item.items[j];
+          var li = $('<li></li>');
+          var a = navbarLink(subItem.icon, subItem.title, subItem.href, subItem.target);
+          a.removeClass("nav-link").addClass("dropdown-item");
+          li.append(a);
+          menu.append(li);
+        }
+      } else {
+        var li = $('<li class="nav-item"></li>');
+        li.append(navbarLink(item.icon, item.title, item.href, item.target));
+        container.append(li);
+      }
+    }
+  }
+
+  // create or get a reference to an existing dropdown menu
+  function navbarMenu(id, icon, title, container) {
+    var existingMenu = [];
+    if (id)
+      existingMenu = container.children('#' + id);
+    if (existingMenu.length > 0) {
+      return existingMenu.children('ul');
+    } else {
+      var li = $('<li class="nav-item"></li>');
+      if (id)
+        li.attr('id', id);
+      li.addClass('dropdown');
+      // auto add "Share" title on mobile if necessary
+      if (!title && icon && (icon === "fa-share-alt") && isMobilePhone())
+        title = "Share";
+      if (title) {
+        title = title + ' <span class="caret"></span>';
+      }
+      var a = navbarLink(icon, title, "#");
+      a.addClass('dropdown-toggle');
+      a.attr('data-toggle', 'dropdown');
+      a.attr('data-bs-toggle', 'dropdown');
+      a.attr('role', 'button');
+      a.attr('aria-expanded', 'false');
+      li.append(a);
+      var ul = $('<ul class="dropdown-menu"></ul>');
+      ul.attr('role', 'menu');
+      li.append(ul);
+      container.append(li);
+      return ul;
+    }
+  }
+
+  function addToNavbar(page, active) {
+
+    // capture the id and data-icon attribute (if any)
+    var id = page.attr('id');
+    var icon = page.attr('data-icon');
+    var navmenu = page.attr('data-navmenu');
+    var navmenuIcon = page.attr('data-navmenu-icon');
+
+    // get hidden state (transfer this to navbar)
+    var hidden = page.hasClass('hidden');
+    page.removeClass('hidden');
+
+    // sanitize the id for use with bootstrap tabs
+    id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
+    page.attr('id', id);
+
+    // get the wrapper
+    var wrapper = page.closest('.dashboard-page-wrapper');
+
+    // move the id to the wrapper
+    page.removeAttr('id');
+    wrapper.attr('id', id);
+
+    // add the tab-pane class to the wrapper
+    wrapper.addClass('tab-pane');
+
+    // get a reference to the h1, discover its inner contens, then detach it
+    var h1 = wrapper.find('h1').first();
+    var title = h1.contents();
+    h1.detach();
+
+    // create a navbar item
+    var li = $('<li></li>');
+    var a = navbarLink(icon, title, '#' + id);
+    a.attr('data-toggle', 'tab');
+    a.attr('data-bs-toggle', 'tab');
+    li.append(a);
+
+    // add it to the navbar (or navbar menu if specified)
+    var container = $('ul.navbar-left');
+    if (navmenu) {
+      var menuId = navmenu.replace(/\s+/g, '');
+      var menu = navbarMenu(menuId, navmenuIcon, navmenu, container);
+      li.find("> a").removeClass("nav-link").addClass("dropdown-item");
+      menu.append(li);
+    } else {
+      li.addClass("nav-item")
+      container.append(li);
+    }
+
+    // mark active tab and corresponding nav menu item
+    if (active)
+      $(a).tab("show");
+
+    // hide it if requested
+    if (hidden)
+      li.addClass('hidden');
+  }
+
+  function navbarLink(icon, title, href, target) {
+
+    var a = $('<a class="nav-link"></a>');
+    if (icon) {
+
+      // get the name of the icon set and icon
+      var dashPos = icon.indexOf("-");
+      var iconSet = null;
+      var iconSplit = icon.split(" ");
+      if (iconSplit.length > 1) {
+        iconSet = iconSplit[0];
+        icon = iconSplit.slice(1).join(" ");
+      } else {
+        iconSet = icon.substring(0, dashPos);
+      }
+      var iconName = icon.substring(dashPos + 1);
+
+      // create the icon
+      var iconElement = $('<span class="' + iconSet + ' ' + icon + '"></span>');
+      if (title)
+        iconElement.css('margin-right', '7px');
+      a.append(iconElement);
+      // if href is null see if we can auto-generate based on icon (e.g. social)
+      if (!href)
+        maybeGenerateLinkFromIcon(iconName, a);
+    }
+    if (title)
+      a.append(title);
+
+    // add the href.
+    if (href) {
+      if (href === "source_embed") {
+        a.attr('href', '#');
+        a.attr('data-featherlight', "#flexdashboard-source-code");
+        a.featherlight({
+            beforeOpen: function(event){
+              $('body').addClass('unselectable');
+            },
+            afterClose: function(event){
+              $('body').removeClass('unselectable');
+            }
+        });
+      } else {
+        a.attr('href', href);
+      }
+    }
+
+    // add the arget
+    if (target)
+      a.attr('target', target);
+
+    return a;
+  }
+
+  // auto generate a link from an icon name (e.g. twitter) when possible
+  function maybeGenerateLinkFromIcon(iconName, a) {
+
+     var serviceLinks = {
+      "twitter": "https://twitter.com/share?text=" + encodeURIComponent(document.title) + "&url="+encodeURIComponent(location.href),
+      "facebook": "https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(location.href),
+      "linkedin": "https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent(location.href) + "&title=" + encodeURIComponent(document.title),
+      "pinterest": "https://pinterest.com/pin/create/link/?url="+encodeURIComponent(location.href) + "&description=" + encodeURIComponent(document.title)
+    };
+
+    var makeSocialLink = function(a, href) {
+      a.attr('href', '#');
+      a.on('click', function(e) {
+        e.preventDefault();
+        window.open(href);
+      });
+    };
+
+    $.each(serviceLinks, function(key, value) {
+      if (iconName.indexOf(key) !== -1)
+        makeSocialLink(a, value);
+    });
+  }
+
+  // layout a dashboard page
+  function layoutDashboardPage(page) {
+
+    // use a page wrapper so that free form content above the
+    // dashboard appears at the top rather than the side (as it
+    // would without the wrapper in a column orientation)
+    var wrapper = $('<div class="dashboard-page-wrapper"></div>');
+    page.wrap(wrapper);
+
+    // if there are no level2 or level3 headers synthesize a level3
+    // header to contain the (e.g. frame it, scroll container, etc.)
+    var headers = page.find('h2,h3');
+    if (headers.length === 0)
+      page.wrapInner('<div class="section level3"></div>');
+
+    // hoist up any content before level 2 or level 3 headers
+    var children = page.children();
+    children.each(function(index) {
+      if ($(this).hasClass('level2') || $(this).hasClass('level3'))
+        return false;
+      $(this).insertBefore(page);
+    });
+
+    // determine orientation and fillPage behavior for distinct media
+    var orientation, fillPage, storyboard;
+
+    // media: mobile phone
+    if (isMobilePhone()) {
+
+      // if there is a sidebar we need to ensure it's content
+      // is properly framed as an h3
+      var sidebar = page.find('.section.sidebar');
+      sidebar.removeClass('sidebar');
+      sidebar.wrapInner('<div class="section level3"></div>');
+      var h2 = sidebar.find('h2');
+      var h3 = $('<h3></h3>');
+      h3.append(h2.contents());
+      h3.insertBefore(h2);
+      h2.detach();
+
+      // wipeout h2 elements then enclose them in a single h2
+      var level2 = page.find('div.section.level2');
+      level2.each(function() {
+        level2.children('h2').remove();
+        level2.children().unwrap();
+      });
+      page.wrapInner('<div class="section level2"></div>');
+
+      // substitute mobile images
+      if (isPortrait()) {
+        var mobileFigures = $('img.mobile-figure');
+        mobileFigures.each(function() {
+          // get the src (might be base64 encoded)
+          var src = $(this).attr('src');
+
+          // find it's peer
+          var id = $(this).attr('data-mobile-figure-id');
+          var img = $('img[data-figure-id=' + id + "]");
+          img.attr('src', src)
+             .attr('width', _options.defaultFigWidthMobile)
+             .attr('height', _options.defaultFigHeightMobile);
+        });
+      }
+
+      // hoist storyboard commentary into it's own section
+      if (page.hasClass('storyboard')) {
+        var commentaryHR = page.find('div.section.level3 hr');
+        commentaryHR.each(function() {
+          var commentary = $(this).nextAll().detach();
+          var commentarySection = $('<div class="section level3"></div>');
+          commentarySection.append(commentary);
+          commentarySection.insertAfter($(this).closest('div.section.level3'));
+          $(this).remove();
+        });
+      }
+
+      // force a non full screen layout by columns
+      orientation = _options.orientation = 'columns';
+      fillPage = _options.fillPage = false;
+      storyboard = _options.storyboard = false;
+
+    // media: desktop
+    } else {
+
+      // determine orientation
+      orientation = page.attr('data-orientation');
+      if (orientation !== 'rows' && orientation != 'columns')
+        orientation = _options.orientation;
+
+      // determine storyboard mode
+      storyboard = page.hasClass('storyboard');
+
+      // fillPage based on options (force for storyboard)
+      fillPage = _options.fillPage || storyboard;
+
+      // handle sidebar
+      var sidebar = page.find('.section.level2.sidebar');
+      if (sidebar.length > 0)
+        layoutSidebar(sidebar, page);
+    }
+
+    // give it and it's parent divs height: 100% if we are in fillPage mode
+    if (fillPage) {
+      page.addClass('vertical-layout-fill');
+      page.css('height', '100%');
+      page.parents('div').css('height', '100%');
+    } else {
+      page.addClass('vertical-layout-scroll');
+    }
+
+    // perform the layout
+    if (storyboard)
+      layoutPageAsStoryboard(page);
+    else if (orientation === 'rows')
+      layoutPageByRows(page, fillPage);
+    else if (orientation === 'columns')
+      layoutPageByColumns(page, fillPage);
+  }
+
+  function layoutSidebar(sidebar, content) {
+
+    // get it out of the header hierarchy
+    sidebar = sidebar.first();
+    if (sidebar.hasClass('level1')) {
+      sidebar.removeClass('level1');
+      sidebar.children('h1').remove();
+    } else if (sidebar.hasClass('level2')) {
+      sidebar.removeClass('level2');
+      sidebar.children('h2').remove();
+    }
+
+    // determine width
+    var sidebarWidth = isTablet() ? 220 : 250;
+    var dataWidth = parseInt(sidebar.attr('data-width'));
+    if (dataWidth)
+      sidebarWidth = dataWidth;
+
+    // set the width and shift the page right to accomodate the sidebar
+    sidebar.css('width', sidebarWidth + 'px');
+    content.css('padding-left', sidebarWidth + 'px');
+
+    // wrap it's contents in a form
+    sidebar.wrapInner($('<form></form>'));
+  }
+
+  function layoutPageAsStoryboard(page) {
+
+    // create storyboard navigation
+    var nav = $('<div class="storyboard-nav"></div>');
+
+    // add navigation buttons
+    var prev = $('<button class="sbprev"><i class="fa fa-angle-left"></i></button>');
+    nav.append(prev);
+    var next= $('<button class="sbnext"><i class="fa fa-angle-right"></i></button>');
+    nav.append(next);
+
+    // add navigation frame
+    var frameList = $('<div class="sbframelist"></div>');
+    nav.append(frameList);
+    var ul = $('<ul></ul>');
+    frameList.append(ul);
+
+     // find all the level3 sections (those are the storyboard frames)
+    var frames = page.find('div.section.level3');
+    frames.each(function() {
+
+      // mark it
+      $(this).addClass('sbframe');
+
+      // divide it into chart content and (optional) commentary
+      $(this).addClass('dashboard-column-orientation');
+
+      // stuff the chart into it's own div w/ flex
+      $(this).wrapInner('<div class="sbframe-component"></div>');
+      setFlex($(this), 1);
+      var frame = $(this).children('.sbframe-component');
+
+      // extract the title from the h3
+      var li = $('<li></li>');
+      var h3 = frame.children('h3');
+      li.append(h3.contents());
+      h3.detach();
+      ul.append(li);
+
+      // extract commentary
+      var hr = frame.children('hr');
+      if (hr.length) {
+        var commentary = hr.nextAll().detach();
+        hr.remove();
+        var commentaryFrame = $('<div class="sbframe-commentary"></div>');
+        commentaryFrame.addClass('flowing-content-shim');
+        commentaryFrame.addClass('flowing-content-container');
+        commentaryFrame.append(commentary);
+        $(this).append(commentaryFrame);
+
+        // look for a data-commentary-width attribute
+        var commentaryWidth = $(this).attr('data-commentary-width');
+        if (commentaryWidth)
+          commentaryFrame.css('width', commentaryWidth + 'px');
+      }
+
+      // layout the chart (force flex)
+      var result = layoutChart(frame, true);
+
+      // ice the notes if there are none
+      if (!result.notes)
+        frame.find('.chart-notes').remove();
+
+      // set flex on chart
+      setFlex(frame, 1);
+    });
+
+    // create a div to hold all the frames
+    var frameContent = $('<div class="sbframe-content"></div>');
+    frameContent.addClass('dashboard-row-orientation');
+    frameContent.append(frames.detach());
+
+    // row orientation to stack nav and frame content
+    page.addClass('dashboard-row-orientation');
+    page.append(nav);
+    page.append(frameContent);
+    setFlex(frameContent, 1);
+
+    // initialize sly
+    var sly = new Sly(frameList, {
+    		horizontal: true,
+    		itemNav: 'basic',
+    		smart: true,
+    		activateOn: 'click',
+    		startAt: 0,
+    		scrollBy: 1,
+    		activatePageOn: 'click',
+    		speed: 200,
+    		moveBy: 600,
+    		dragHandle: true,
+    		dynamicHandle: true,
+    		clickBar: true,
+    		keyboardNavBy: 'items',
+    		next: next,
+    		prev: prev
+    	}).init();
+
+    // make first frame active
+    frames.removeClass('active');
+    frames.first().addClass('active');
+
+    // subscribe to frame changed events
+    sly.on('active', function (eventName, itemIndex) {
+      frames.removeClass('active');
+      frames.eq(itemIndex).addClass('active')
+                          .trigger('shown');
+    });
+  }
+
+  function layoutPageByRows(page, fillPage) {
+
+    // row orientation
+    page.addClass('dashboard-row-orientation');
+
+    // find all the level2 sections (those are the rows)
+    var rows = page.find('div.section.level2');
+
+    // if there are no level2 sections then treat the
+    // entire page as if it's a level 2 section
+    if (rows.length === 0) {
+      page.wrapInner('<div class="section level2"></div>');
+      rows = page.find('div.section.level2');
+    }
+
+    rows.each(function () {
+
+      // flags
+      var haveNotes = false;
+      var haveFlexHeight = true;
+
+      // remove the h2
+      $(this).children('h2').remove();
+
+      // check for a tabset
+      var isTabset = $(this).hasClass('tabset');
+      if (isTabset)
+        layoutTabset($(this));
+
+      // give it row layout semantics if it's not a tabset
+      if (!isTabset)
+        $(this).addClass('dashboard-row');
+
+      // find all of the level 3 subheads
+      var columns = $(this).find('div.section.level3');
+
+      // determine figureSizes sizes
+      var figureSizes = chartFigureSizes(columns);
+
+      // fixup the columns
+      columns.each(function(index) {
+
+        // layout the chart (force flex if we are in a tabset)
+        var result = layoutChart($(this), isTabset);
+
+        // update flexHeight state
+        if (!result.flex)
+          haveFlexHeight = false;
+
+        // update state
+        if (result.notes)
+          haveNotes = true;
+
+        // set the column flex based on the figure width
+        // (value boxes will just get the default figure width)
+        var chartWidth = figureSizes[index].width;
+        setFlex($(this), chartWidth + ' ' + chartWidth + ' 0px');
+
+      });
+
+      // remove empty chart note divs
+      if (isTabset)
+        $(this).find('.chart-notes').filter(function() {
+            return $(this).html() === "&nbsp;";
+        }).remove();
+      if (!haveNotes)
+        $(this).find('.chart-notes').remove();
+
+       // make it a flexbox row
+      if (haveFlexHeight)
+        $(this).addClass('dashboard-row-flex');
+
+      // now we can set the height on all the wrappers (based on maximum
+      // figure height + room for title and notes, or data-height on the
+      // container if specified). However, don't do this if there is
+      // no flex on any of the constituent columns
+      var flexHeight = null;
+      var dataHeight = parseInt($(this).attr('data-height'));
+      if (dataHeight)
+        flexHeight = adjustedHeight(dataHeight, columns.first());
+      else if (haveFlexHeight)
+        flexHeight = maxChartHeight(figureSizes, columns);
+      if (flexHeight) {
+        if (fillPage)
+          setFlex($(this), flexHeight + ' ' + flexHeight + ' 0px');
+        else {
+          $(this).css('height', flexHeight + 'px');
+          setFlex($(this), '0 0 ' + flexHeight + 'px');
+        }
+      }
+
+    });
+  }
+
+  function layoutPageByColumns(page, fillPage) {
+
+    // column orientation
+    page.addClass('dashboard-column-orientation');
+
+    // find all the level2 sections (those are the columns)
+    var columns = page.find('div.section.level2');
+
+    // if there are no level2 sections then treat the
+    // entire page as if it's a level 2 section
+    if (columns.length === 0) {
+      page.wrapInner('<div class="section level2"></div>');
+      columns = page.find('div.section.level2');
+    }
+
+    // layout each column
+    columns.each(function (index) {
+
+      // remove the h2
+      $(this).children('h2').remove();
+
+      // make it a flexbox column
+      $(this).addClass('dashboard-column');
+
+      // check for a tabset
+      var isTabset = $(this).hasClass('tabset');
+      if (isTabset)
+        layoutTabset($(this));
+
+      // find all the h3 elements
+      var rows = $(this).find('div.section.level3');
+
+      // get the figure sizes for the rows
+      var figureSizes = chartFigureSizes(rows);
+
+      // column flex is the max row width (or data-width if specified)
+      var flexWidth;
+      var dataWidth = parseInt($(this).attr('data-width'));
+      if (dataWidth)
+        flexWidth = dataWidth;
+      else
+        flexWidth = maxChartWidth(figureSizes);
+      setFlex($(this), flexWidth + ' ' + flexWidth + ' 0px');
+
+      // layout each chart
+      rows.each(function(index) {
+
+        // perform the layout
+        var result = layoutChart($(this), false);
+
+        // ice the notes if there are none
+        if (!result.notes)
+          $(this).find('.chart-notes').remove();
+
+        // set flex height based on figHeight, then adjust
+        if (result.flex) {
+          var chartHeight = figureSizes[index].height;
+          chartHeight = adjustedHeight(chartHeight, $(this));
+          if (fillPage)
+            setFlex($(this), chartHeight + ' ' + chartHeight + ' 0px');
+          else {
+            $(this).css('height', chartHeight + 'px');
+            setFlex($(this), chartHeight + ' ' + chartHeight + ' ' + chartHeight + 'px');
+          }
+        }
+      });
+    });
+  }
+
+  function chartFigureSizes(charts) {
+
+    // sizes
+    var figureSizes = new Array(charts.length);
+
+    // check each chart
+    charts.each(function(index) {
+
+      // start with default
+      figureSizes[index] = {
+        width: _options.defaultFigWidth,
+        height: _options.defaultFigHeight
+      };
+
+      // look for data-height or data-width then knit options
+      var dataWidth = parseInt($(this).attr('data-width'));
+      var dataHeight = parseInt($(this).attr('data-height'));
+      var knitrOptions = $(this).find('.knitr-options:first');
+      var knitrWidth, knitrHeight;
+      if (knitrOptions) {
+        knitrWidth = parseInt(knitrOptions.attr('data-fig-width'));
+        knitrHeight =  parseInt(knitrOptions.attr('data-fig-height'));
+      }
+
+      // width
+      if (dataWidth)
+        figureSizes[index].width = dataWidth;
+      else if (knitrWidth)
+        figureSizes[index].width = knitrWidth;
+
+      // height
+      if (dataHeight)
+        figureSizes[index].height = dataHeight;
+      else if (knitrHeight)
+        figureSizes[index].height = knitrHeight;
+    });
+
+    // return sizes
+    return figureSizes;
+  }
+
+  function maxChartHeight(figureSizes, charts) {
+
+    // first compute the maximum height
+    var maxHeight = _options.defaultFigHeight;
+    for (var i = 0; i<figureSizes.length; i++)
+      if (figureSizes[i].height > maxHeight)
+        maxHeight = figureSizes[i].height;
+
+    // now add offests for chart title and chart notes
+    if (charts.length)
+      maxHeight = adjustedHeight(maxHeight, charts.first());
+
+    return maxHeight;
+  }
+
+  function adjustedHeight(height, chart) {
+    if (chart.length > 0) {
+      var chartTitle = chart.find('.chart-title');
+      if (chartTitle.length)
+        height += chartTitle.first().outerHeight();
+      var chartNotes = chart.find('.chart-notes');
+      if (chartNotes.length)
+        height += chartNotes.first().outerHeight();
+    }
+    return height;
+  }
+
+  function maxChartWidth(figureSizes) {
+    var maxWidth = _options.defaultFigWidth;
+    for (var i = 0; i<figureSizes.length; i++)
+      if (figureSizes[i].width > maxWidth)
+        maxWidth = figureSizes[i].width;
+    return maxWidth;
+  }
+
+  // layout a chart
+  function layoutChart(chart, forceFlex) {
+
+    // state to return
+    var result = {
+      notes: false,
+      flex: false
+    };
+
+    // extract the title
+    var title = extractTitle(chart);
+
+    // find components that apply to this container
+    var components = componentsFind(chart);
+
+    // if it's a custom component then call it and return
+    var customComponents = componentsCustom(components);
+    if (customComponents.length) {
+      componentsLayout(customComponents, title, chart);
+      result.notes = false;
+      result.flex = forceFlex || componentsFlex(customComponents);
+      return result;
+    }
+
+    // put all the content in a chart wrapper div
+    chart.addClass('chart-wrapper');
+    chart.wrapInner('<div class="chart-stage"></div>');
+    var chartContent = chart.children('.chart-stage');
+
+    // flex the content if appropriate
+    result.flex = forceFlex || componentsFlex(components);
+    if (result.flex) {
+      // add flex classes
+      chart.addClass('chart-wrapper-flex');
+      chartContent.addClass('chart-stage-flex');
+
+      // additional shim to break out of flexbox sizing
+      chartContent.wrapInner('<div class="chart-shim"></div>');
+      chartContent = chartContent.children('.chart-shim');
+    }
+
+    // set custom data-padding attribute
+    var pad = chart.attr('data-padding');
+    if (pad) {
+      if (pad === "0")
+        chart.addClass('no-padding');
+      else {
+        pad = pad + 'px';
+        chartContent.css('left', pad)
+                    .css('top', pad)
+                    .css('right', pad)
+                    .css('bottom', pad)
+      }
+    }
+
+    // call compoents
+    componentsLayout(components, title, chartContent);
+
+    // also activate components on shiny output
+    findShinyOutput(chartContent).on('shiny:value',
+      function(event) {
+        var element = $(event.target);
+        setTimeout(function() {
+
+          // see if we opted out of flex based on our output (for shiny
+          // we can't tell what type of output we have until after the
+          // value is bound)
+          var components = componentsFind(element);
+          var flex = forceFlex || componentsFlex(components);
+          if (!flex) {
+            chart.css('height', "");
+            setFlex(chart, "");
+            chart.removeClass('chart-wrapper-flex');
+            chartContent.removeClass('chart-stage-flex');
+            chartContent.children().unwrap();
+          }
+
+          // perform layout
+          componentsLayout(components, title, element.parent());
+        }, 10);
+      });
+
+    // add the title
+    var chartTitle = $('<div class="chart-title"></div>');
+    chartTitle.append(title);
+    chart.prepend(chartTitle);
+
+    // add the notes section
+    var chartNotes = $('<div class="chart-notes"></div>');
+    chartNotes.html('&nbsp;');
+    chart.append(chartNotes);
+
+    // attempt to extract notes if we have a component
+    if (components.length)
+      result.notes = extractChartNotes(chartContent, chartNotes);
+
+    // return result
+    return result;
+  }
+
+  // build a tabset from a section div with the .tabset class
+  function layoutTabset(tabset) {
+
+    // check for fade option
+    var fade = tabset.hasClass("tabset-fade");
+    var pills = tabset.hasClass("tabset-pills");
+    var navClass = pills ? "nav-pills" : "nav-tabs";
+
+    // determine the heading level of the tabset and tabs
+    var match = tabset.attr('class').match(/level(\d) /);
+    if (match === null)
+      return;
+    var tabsetLevel = Number(match[1]);
+    var tabLevel = tabsetLevel + 1;
+
+    // find all subheadings immediately below
+    var tabs = tabset.find("div.section.level" + tabLevel);
+    if (!tabs.length)
+      return;
+
+    // create tablist and tab-content elements
+    var tabList = $('<ul class="nav ' + navClass + '" role="tablist"></ul>');
+    $(tabs[0]).before(tabList);
+    var tabContent = $('<div class="tab-content"></div>');
+    $(tabs[0]).before(tabContent);
+
+    // build the tabset
+    var activeTab = 0;
+    tabs.each(function(i) {
+
+      // get the tab div
+      var tab = $(tabs[i]);
+
+      // get the id then sanitize it for use with bootstrap tabs
+      var id = tab.attr('id');
+
+      // see if this is marked as the active tab
+      if (tab.hasClass('active'))
+        activeTab = i;
+
+      // sanitize the id for use with bootstrap tabs
+      id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
+      tab.attr('id', id);
+
+      // get the heading element within it and grab it's text
+      var heading = tab.find('h' + tabLevel + ':first');
+      var headingDom = heading.contents();
+
+      // build and append the tab list item
+      var a = $('<a role="tab" data-toggle="tab" data-bs-toggle="tab" class="nav-link"></a>');
+      a.append(headingDom);
+      a.attr('href', '#' + id);
+      a.attr('aria-controls', id);
+      var li = $('<li role="presentation" class="nav-item"></li>');
+      li.append(a);
+      tabList.append(li);
+
+      // set it's attributes
+      tab.attr('role', 'tabpanel');
+      tab.addClass('tab-pane');
+      tab.addClass('tabbed-pane');
+      tab.addClass('no-title');
+      if (fade)
+        tab.addClass('fade');
+
+      // move it into the tab content div
+      tab.detach().appendTo(tabContent);
+    });
+
+    // set active tab
+    $(tabList.children()[activeTab]).tab("show");
+    var active = $(tabContent.children('div.section')[activeTab]);
+    active.addClass('active');
+    if (fade)
+      active.addClass('in');
+
+    // add nav-tabs-custom
+    tabset.addClass('nav-tabs-custom');
+
+    // internal layout is dashboard-column with tab-content flexing
+    tabset.addClass('dashboard-column');
+    setFlex(tabContent, 1);
+  }
+
+  // one time global initialization for components
+  function componentsInit(dashboardContainer) {
+    for (var i=0; i<window.FlexDashboardComponents.length; i++) {
+      var component = window.FlexDashboardComponents[i];
+      if (component.init)
+        component.init(dashboardContainer);
+    }
+  }
+
+  // find components that apply within a container
+  function componentsFind(container) {
+
+    // look for components
+    var components = [];
+    for (var i=0; i<window.FlexDashboardComponents.length; i++) {
+      var component = window.FlexDashboardComponents[i];
+      if (component.find(container).length)
+        components.push(component);
+    }
+
+    // if there were none then use a special flowing content component
+    // that just adds a scrollbar in fillPage mode
+    if (components.length == 0) {
+      components.push({
+        find: function(container) {
+          return container;
+        },
+
+        flex: function(fillPage) {
+          return fillPage;
+        },
+
+        layout: function(title, container, element, fillPage) {
+          if (fillPage) {
+            container.addClass('flowing-content-shim');
+            container.addClass('flowing-content-container');
+          }
+        }
+      });
+    }
+
+    return components;
+  }
+
+  // if there is a custom component then pick it out
+  function componentsCustom(components) {
+    var customComponent = [];
+    for (var i=0; i<components.length; i++)
+      if (components[i].type === "custom") {
+        customComponent.push(components[i]);
+        break;
+      }
+    return customComponent;
+  }
+
+  // query all components for flex
+  function componentsFlex(components) {
+
+    // no components at all means no flex
+    if (components.length === 0)
+      return false;
+
+    // otherwise query components (assume true unless we see false)
+    var isMobile = isMobilePhone();
+    for (var i=0; i<components.length; i++)
+      if (components[i].flex && !components[i].flex(_options.fillPage))
+        return false;
+    return true;
+  }
+
+  // layout all components
+  function componentsLayout(components, title, container) {
+    var isMobile = isMobilePhone();
+    for (var i=0; i<components.length; i++) {
+      var element = components[i].find(container);
+      if (components[i].layout) {
+        // call layout (don't call other components if it returns false)
+        var result = components[i].layout(title, container, element, _options.fillPage);
+        if (result === false)
+          return;
+      }
+    }
+  }
+
+  // get a reference to the h3, discover it's inner html, and remove it
+  function extractTitle(container) {
+    var h3 = container.children('h3').first();
+    var title = '';
+    if (!container.hasClass('no-title'))
+      title = h3.contents();
+    h3.detach();
+    return title;
+  }
+
+  // extract chart notes
+  function extractChartNotes(chartContent, chartNotes) {
+    // look for a terminating blockquote or image caption
+    var blockquote = chartContent.children('blockquote:last-child');
+    var caption = chartContent.children('div.image-container')
+                              .children('p.caption');
+    if (blockquote.length) {
+      chartNotes.empty().append(blockquote.children('p:first-child').contents());
+      blockquote.remove();
+      return true;
+    } else if (caption.length) {
+      chartNotes.empty().append(caption.contents());
+      caption.remove();
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function findShinyOutput(chartContent) {
+    return chartContent.find('.shiny-text-output, .shiny-html-output');
+  }
+
+  // safely detect rendering on a mobile phone
+  function isMobilePhone() {
+    try
+    {
+      return ! window.matchMedia("only screen and (min-width: 768px)").matches;
+    }
+    catch(e) {
+      return false;
+    }
+  }
+
+  function isFillPage() {
+    return _options.fillPage;
+  }
+
+  // detect portrait mode
+  function isPortrait() {
+    return ($(window).width() < $(window).height());
+  }
+
+  // safely detect rendering on a tablet
+  function isTablet() {
+    try
+    {
+      return window.matchMedia("only screen and (min-width: 769px) and (max-width: 992px)").matches;
+    }
+    catch(e) {
+      return false;
+    }
+  }
+
+  // test whether this is a shiny doc
+  function isShinyDoc() {
+    return (typeof(window.Shiny) !== "undefined" && !!window.Shiny.outputBindings);
+  }
+
+  // set flex using vendor specific prefixes
+  function setFlex(el, flex) {
+    el.css('-webkit-box-flex', flex)
+      .css('-webkit-flex', flex)
+      .css('-ms-flex', flex)
+      .css('flex', flex);
+  }
+
+  // support bookmarking of pages
+  function handleLocationHash() {
+
+    // restore tab/page from bookmark
+    var hash = window.decodeURIComponent(window.location.hash);
+    if (hash.length > 0) {
+      // Update the tab without .showPage() so that we don't change page history
+      $('ul.nav a[href="' + hash + '"]').tab('show');
+    }
+
+    // navigate to a tab when the history changes
+    window.addEventListener("popstate", function(e) {
+      var hash = window.decodeURIComponent(window.location.hash);
+      var activeTab = $('ul.nav a[href="' + hash + '"]');
+      if (activeTab.length) {
+        activeTab.tab('show');
+      } else {
+        // returning to the base page URL without a hash activates first tab
+        $('ul.nav a:first').tab('show');
+      }
+    });
+
+    // add a hash to the URL when the user clicks on a tab/page
+    $('.navbar-nav a[data-toggle="tab"]').on('click', function(e) {
+      var baseUrl = FlexDashboardUtils.urlWithoutHash(window.location.href);
+      var hash = FlexDashboardUtils.urlHash($(this).attr('href'));
+      var href = baseUrl + hash;
+      FlexDashboardUtils.setLocation(href);
+    });
+
+    // handle clicks of other links that should activate pages
+    var navPages = $('ul.navbar-nav li a[data-toggle=tab]');
+    navPages.each(function() {
+      var href =  $(this).attr('href');
+      var links = $('a[href="' + href + '"][data-toggle!=tab]');
+      links.each(function() {
+        $(this).on('click', function(e) {
+          window.FlexDashboardUtils.showPage(href);
+        });
+      });
+    });
+  }
+
+  // tweak Prism highlighting
+  function initPrismHighlighting() {
+
+    if (window.Prism) {
+      Prism.languages.insertBefore('r', 'comment', {
+        'heading': [
+          {
+            // title 1
+        	  // =======
+
+        	  // title 2
+        	  // -------
+        	  pattern: /\w+.*(?:\r?\n|\r)(?:====+|----+)/,
+            alias: 'operator'
+          },
+          {
+            // ### title 3
+            pattern: /(^\s*)###[^#].+/m,
+            lookbehind: true,
+            alias: 'operator'
+          }
+        ]
+      });
+
+      // prism highlight
+      Prism.highlightAll();
+    }
+  }
+
+  FlexDashboard.prototype = {
+    constructor: FlexDashboard,
+    init: init,
+    isMobilePhone: isMobilePhone,
+    isFillPage: isFillPage
+  };
+
+  return FlexDashboard;
+
+})();
+
+// utils
+window.FlexDashboardUtils = {
+  resizableImage: function(img) {
+    var src = img.attr('src');
+    var url = 'url("' + src + '")';
+    img.parent().css('background', url)
+                .css('background-size', 'contain')
+                .css('background-repeat', 'no-repeat')
+                .css('background-position', 'center')
+                .addClass('image-container');
+  },
+  setLocation: function(href) {
+    if (history && history.pushState) {
+      history.pushState(null, null, href);
+    } else {
+      window.location.replace(href);
+    }
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    }, 10);
+  },
+  showPage: function(href) {
+    $('ul.navbar-nav li a[href="' + href + '"]').tab('show');
+    var baseUrl = this.urlWithoutHash(window.location.href);
+    var loc = baseUrl + href;
+    this.setLocation(loc);
+  },
+  showLinkedValue: function(href) {
+    // check for a page link
+    if ($('ul.navbar-nav li a[data-toggle=tab][href="' + href + '"]').length > 0)
+      this.showPage(href);
+    else
+      window.open(href);
+  },
+  urlWithoutHash: function(url) {
+    var hashLoc = url.indexOf('#');
+    if (hashLoc != -1)
+      return url.substring(0, hashLoc);
+    else
+      return url;
+  },
+  urlHash: function(url) {
+    var hashLoc = url.indexOf('#');
+    if (hashLoc != -1)
+      return url.substring(hashLoc);
+    else
+      return "";
+  }
+};
+
+window.FlexDashboard = new FlexDashboard();
+
+// empty content
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    if (container.find('p').length == 0)
+      return container;
+    else
+      return $();
+  }
+})
+
+// plot image
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('p')
+                    .children('img:only-child');
+  },
+
+  layout: function(title, container, element, fillPage) {
+    FlexDashboardUtils.resizableImage(element);
+  }
+});
+
+// plot image (figure style)
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('div.figure').children('img');
+  },
+
+  layout: function(title, container, element, fillPage) {
+    FlexDashboardUtils.resizableImage(element);
+  }
+});
+
+// htmlwidget
+window.FlexDashboardComponents.push({
+
+  init: function(dashboardContainer) {
+    // trigger "shown" after initial layout to force static htmlwidgets
+    // in runtime: shiny to be resized after the dom has been transformed
+    dashboardContainer.on('flexdashboard:layoutcomplete', function(event) {
+      setTimeout(function() {
+        dashboardContainer.trigger('shown');
+      }, 200);
+    });
+  },
+
+  find: function(container) {
+    return container.children('div[id^="htmlwidget-"],div.html-widget');
+  }
+});
+
+// gauge
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('div.html-widget.gauge');
+  },
+
+  flex: function(fillPage) {
+    return false;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+
+  }
+
+});
+
+// shiny output
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    return container.children('div[class^="shiny-"]');
+  }
+});
+
+// bootstrap table
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    var bsTable = container.find('table.table');
+    if (bsTable.length !== 0)
+      return bsTable;
+    else
+      return container.find('tr.header').parent('thead').parent('table');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+    // alias variables
+    var bsTable = element;
+
+    // fixup xtable generated tables with a proper thead
+    var headerRow = bsTable.find('tbody > tr:first-child > th').parent();
+    if (headerRow.length > 0) {
+      var thead = $('<thead></thead>');
+      bsTable.prepend(thead);
+      headerRow.detach().appendTo(thead);
+    }
+
+    // improve appearance
+    container.addClass('bootstrap-table');
+
+    // for fill page provide scrolling w/ sticky headers
+    if (fillPage) {
+      // force scrollbar on overflow
+      container.addClass('flowing-content-shim');
+
+      // stable table headers when scrolling
+      bsTable.stickyTableHeaders({
+        scrollableArea: container
+      });
+    }
+  }
+});
+
+// embedded shiny app
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.find('iframe.shiny-frame');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+    if (fillPage) {
+      element.attr('height', '100%');
+    } else {
+      // provide default height if necessary
+      var height = element.get(0).style.height;
+      if (!height)
+        height = element.attr('height');
+      if (!height)
+        element.attr('height', 500);
+    }
+  }
+});
+
+// shiny fillRow or fillCol
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.find('.flexfill-container');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+    if (fillPage)
+      element.css('height', '100%');
+    else {
+      // provide default height if necessary
+      var height = element.get(0).style.height;
+      if (height === "100%" || height === "auto" || height === "initial" ||
+          height === "inherit" || !height) {
+        element.css('height', 500);
+      }
+    }
+  }
+});
+
+// valueBox
+window.FlexDashboardComponents.push({
+
+  type: "custom",
+
+  find: function(container) {
+    if (container.find('span.value-output, .shiny-valuebox-output').length)
+      return container;
+    else
+      return $();
+  },
+
+  flex: function(fillPage) {
+    return false;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+    // alias variables
+    var chartTitle = title;
+    var valueBox = element;
+
+    // add value-box class to container
+    container.addClass('value-box');
+
+    // value paragraph
+    var value = $('<p class="value"></p>');
+
+    // if we have shiny-text-output then just move it in
+    var valueOutputSpan = [];
+    var shinyOutput = valueBox.find('.shiny-valuebox-output').detach();
+    if (shinyOutput.length) {
+      valueBox.children().remove();
+      shinyOutput.html("&mdash;");
+      value.append(shinyOutput);
+    } else {
+      // extract the value (remove leading vector index)
+      var chartValue = valueBox.text().trim();
+      chartValue = chartValue.replace("[1] ", "");
+      valueOutputSpan = valueBox.find('span.value-output').detach();
+      valueBox.children().remove();
+      value.text(chartValue);
+    }
+
+    // caption
+    var caption = $('<p class="caption"></p>');
+    caption.append(chartTitle);
+
+    // build inner div for value box and add it
+    var inner = $('<div class="inner"></div>');
+    inner.append(value);
+    inner.append(caption);
+    valueBox.append(inner);
+
+    // add icon if specified
+    var icon = $('<div class="icon"><i></i></div>');
+    valueBox.append(icon);
+    function setIcon(chartIcon) {
+      var iconLib = "";
+      var iconSplit = chartIcon.split(" ");
+      if (iconSplit.length > 1) {
+        iconLib = iconSplit[0];
+        chartIcon = iconSplit.slice(1).join(" ");
+      } else {
+        var components = chartIcon.split("-");
+        if (components.length > 1)
+          iconLib = components[0];
+      }
+      icon.children('i').attr('class', iconLib + ' ' + chartIcon);
+    }
+    var chartIcon = valueBox.attr('data-icon');
+    if (chartIcon)
+      setIcon(chartIcon);
+
+    // handle data attributes in valueOutputSpan
+    function handleValueOutput(valueOutput) {
+
+      // caption
+      var dataCaption = valueOutput.attr('data-caption');
+      if (dataCaption)
+        caption.html(dataCaption);
+
+      // icon
+      var dataIcon = valueOutput.attr('data-icon');
+      if (dataIcon)
+        setIcon(dataIcon);
+
+      // If valueBox(color=) was an accent color, this attr should
+      // be populated with the accent color and the relevant CSS comes
+      // in through HTML dependencies
+      var dataColorAccent = valueOutput.attr('data-color-accent');
+      var valueBoxClasses = "value-box-" + (["primary", "info", "danger", "warning", "success"].join(" value-box-"));
+      if (dataColorAccent) {
+        valueBox.removeClass(valueBoxClasses);
+        valueBox.addClass('value-box-' + dataColorAccent);
+      }
+
+      // If valueBox(color=) was a CSS color, these other data-color-*
+      // attrs will be populated
+      var dataColor = valueOutput.attr('data-color');
+      if (dataColor) {
+        valueBox.removeClass(valueBoxClasses);
+        valueBox.css('background-color', dataColor);
+      }
+      var dataColorText = valueOutput.attr('data-color-text');
+      if (dataColorText) {
+        valueBox.find(".inner").css('color', dataColorText);
+      }
+      var dataColorIcon = valueOutput.attr('data-color-icon');
+      if (dataColorIcon) {
+        valueBox.find(".icon").css('color', dataColorIcon);
+      }
+
+      // url
+      var dataHref = valueOutput.attr('data-href');
+      if (dataHref) {
+        valueBox.addClass('linked-value');
+        valueBox.off('click.value-box');
+        valueBox.on('click.value-box', function(e) {
+          window.FlexDashboardUtils.showLinkedValue(dataHref);
+        });
+      }
+    }
+
+    // check for a valueOutputSpan
+    if (valueOutputSpan.length > 0) {
+      handleValueOutput(valueOutputSpan);
+    }
+
+    // if we have a shinyOutput then bind a listener to handle
+    // new valueOutputSpan values
+    shinyOutput.on('shiny:value',
+      function(event) {
+        var element = $(event.target);
+        setTimeout(function() {
+          var valueOutputSpan = element.find('span.value-output');
+          if (valueOutputSpan.length > 0)
+            handleValueOutput(valueOutputSpan);
+        }, 10);
+      }
+    );
+  }
+});
+</script>
+
+<div id="dashboard-container">
+
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<hr />
+<div id="section-add-dashboard-sections" class="section level2">
+<h2>Add dashboard sections</h2>
+<div id="section-column-1-bar-plot" class="section level3">
+<h3><strong>Column 1: Bar Plot</strong></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-22d20fe36bd76ab4f1ae" style="width:576px;height:460.8px;"></div>
+<script type="application/json" data-for="htmlwidget-22d20fe36bd76ab4f1ae">{"x":{"visdat":{"4c7019d98dfc":["function () ","plotlyVisDat"]},"cur_data":"4c7019d98dfc","attrs":{"4c7019d98dfc":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Number of Orders by Department","xaxis":{"domain":[0,1],"automargin":true,"title":"Department","type":"category","categoryorder":"array","categoryarray":["alcohol","babies","bakery","beverages","breakfast","bulk","canned goods","dairy eggs","deli","dry goods pasta","frozen","household","international","meat seafood","missing","other","pantry","personal care","pets","produce","snacks"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Count of Orders"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["alcohol"],"y":[14],"type":"bar","name":"alcohol","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["babies"],"y":[47],"type":"bar","name":"babies","marker":{"color":"rgba(172,179,141,1)","line":{"color":"rgba(172,179,141,1)"}},"textfont":{"color":"rgba(172,179,141,1)"},"error_y":{"color":"rgba(172,179,141,1)"},"error_x":{"color":"rgba(172,179,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["bakery"],"y":[119],"type":"bar","name":"bakery","marker":{"color":"rgba(219,161,118,1)","line":{"color":"rgba(219,161,118,1)"}},"textfont":{"color":"rgba(219,161,118,1)"},"error_y":{"color":"rgba(219,161,118,1)"},"error_x":{"color":"rgba(219,161,118,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["beverages"],"y":[227],"type":"bar","name":"beverages","marker":{"color":"rgba(248,142,103,1)","line":{"color":"rgba(248,142,103,1)"}},"textfont":{"color":"rgba(248,142,103,1)"},"error_y":{"color":"rgba(248,142,103,1)"},"error_x":{"color":"rgba(248,142,103,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["breakfast"],"y":[77],"type":"bar","name":"breakfast","marker":{"color":"rgba(217,150,141,1)","line":{"color":"rgba(217,150,141,1)"}},"textfont":{"color":"rgba(217,150,141,1)"},"error_y":{"color":"rgba(217,150,141,1)"},"error_x":{"color":"rgba(217,150,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["bulk"],"y":[7],"type":"bar","name":"bulk","marker":{"color":"rgba(178,156,177,1)","line":{"color":"rgba(178,156,177,1)"}},"textfont":{"color":"rgba(178,156,177,1)"},"error_y":{"color":"rgba(178,156,177,1)"},"error_x":{"color":"rgba(178,156,177,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["canned goods"],"y":[90],"type":"bar","name":"canned goods","marker":{"color":"rgba(152,158,202,1)","line":{"color":"rgba(152,158,202,1)"}},"textfont":{"color":"rgba(152,158,202,1)"},"error_y":{"color":"rgba(152,158,202,1)"},"error_x":{"color":"rgba(152,158,202,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["dairy eggs"],"y":[473],"type":"bar","name":"dairy eggs","marker":{"color":"rgba(185,152,199,1)","line":{"color":"rgba(185,152,199,1)"}},"textfont":{"color":"rgba(185,152,199,1)"},"error_y":{"color":"rgba(185,152,199,1)"},"error_x":{"color":"rgba(185,152,199,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["deli"],"y":[111],"type":"bar","name":"deli","marker":{"color":"rgba(215,144,197,1)","line":{"color":"rgba(215,144,197,1)"}},"textfont":{"color":"rgba(215,144,197,1)"},"error_y":{"color":"rgba(215,144,197,1)"},"error_x":{"color":"rgba(215,144,197,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["dry goods pasta"],"y":[68],"type":"bar","name":"dry goods pasta","marker":{"color":"rgba(224,152,180,1)","line":{"color":"rgba(224,152,180,1)"}},"textfont":{"color":"rgba(224,152,180,1)"},"error_y":{"color":"rgba(224,152,180,1)"},"error_x":{"color":"rgba(224,152,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen"],"y":[204],"type":"bar","name":"frozen","marker":{"color":"rgba(205,180,144,1)","line":{"color":"rgba(205,180,144,1)"}},"textfont":{"color":"rgba(205,180,144,1)"},"error_y":{"color":"rgba(205,180,144,1)"},"error_x":{"color":"rgba(205,180,144,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["household"],"y":[79],"type":"bar","name":"household","marker":{"color":"rgba(180,206,104,1)","line":{"color":"rgba(180,206,104,1)"}},"textfont":{"color":"rgba(180,206,104,1)"},"error_y":{"color":"rgba(180,206,104,1)"},"error_x":{"color":"rgba(180,206,104,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["international"],"y":[29],"type":"bar","name":"international","marker":{"color":"rgba(186,217,78,1)","line":{"color":"rgba(186,217,78,1)"}},"textfont":{"color":"rgba(186,217,78,1)"},"error_y":{"color":"rgba(186,217,78,1)"},"error_x":{"color":"rgba(186,217,78,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["meat seafood"],"y":[60],"type":"bar","name":"meat seafood","marker":{"color":"rgba(217,217,66,1)","line":{"color":"rgba(217,217,66,1)"}},"textfont":{"color":"rgba(217,217,66,1)"},"error_y":{"color":"rgba(217,217,66,1)"},"error_x":{"color":"rgba(217,217,66,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["missing"],"y":[20],"type":"bar","name":"missing","marker":{"color":"rgba(247,217,52,1)","line":{"color":"rgba(247,217,52,1)"}},"textfont":{"color":"rgba(247,217,52,1)"},"error_y":{"color":"rgba(247,217,52,1)"},"error_x":{"color":"rgba(247,217,52,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["other"],"y":[3],"type":"bar","name":"other","marker":{"color":"rgba(250,212,80,1)","line":{"color":"rgba(250,212,80,1)"}},"textfont":{"color":"rgba(250,212,80,1)"},"error_y":{"color":"rgba(250,212,80,1)"},"error_x":{"color":"rgba(250,212,80,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["pantry"],"y":[194],"type":"bar","name":"pantry","marker":{"color":"rgba(241,204,114,1)","line":{"color":"rgba(241,204,114,1)"}},"textfont":{"color":"rgba(241,204,114,1)"},"error_y":{"color":"rgba(241,204,114,1)"},"error_x":{"color":"rgba(241,204,114,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["personal care"],"y":[47],"type":"bar","name":"personal care","marker":{"color":"rgba(231,197,144,1)","line":{"color":"rgba(231,197,144,1)"}},"textfont":{"color":"rgba(231,197,144,1)"},"error_y":{"color":"rgba(231,197,144,1)"},"error_x":{"color":"rgba(231,197,144,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["pets"],"y":[7],"type":"bar","name":"pets","marker":{"color":"rgba(215,191,158,1)","line":{"color":"rgba(215,191,158,1)"}},"textfont":{"color":"rgba(215,191,158,1)"},"error_y":{"color":"rgba(215,191,158,1)"},"error_x":{"color":"rgba(215,191,158,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["produce"],"y":[863],"type":"bar","name":"produce","marker":{"color":"rgba(198,185,168,1)","line":{"color":"rgba(198,185,168,1)"}},"textfont":{"color":"rgba(198,185,168,1)"},"error_y":{"color":"rgba(198,185,168,1)"},"error_x":{"color":"rgba(198,185,168,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["snacks"],"y":[261],"type":"bar","name":"snacks","marker":{"color":"rgba(179,179,179,1)","line":{"color":"rgba(179,179,179,1)"}},"textfont":{"color":"rgba(179,179,179,1)"},"error_y":{"color":"rgba(179,179,179,1)"},"error_x":{"color":"rgba(179,179,179,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="section-column-2-box-plot" class="section level3">
+<h3><strong>Column 2: Box Plot</strong></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-20b844e24f44c3a1d017" style="width:576px;height:460.8px;"></div>
+<script type="application/json" data-for="htmlwidget-20b844e24f44c3a1d017">{"x":{"visdat":{"4c70277aed0a":["function () ","plotlyVisDat"]},"cur_data":"4c70277aed0a","attrs":{"4c70277aed0a":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Add-to-Cart Order Distribution","xaxis":{"domain":[0,1],"automargin":true,"title":"Department","type":"category","categoryorder":"array","categoryarray":["alcohol","babies","bakery","beverages","breakfast","bulk","canned goods","dairy eggs","deli","dry goods pasta","frozen","household","international","meat seafood","missing","other","pantry","personal care","pets","produce","snacks"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Add-to-Cart Order"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","x":["alcohol","alcohol","alcohol","alcohol","alcohol","alcohol","alcohol","alcohol","alcohol","alcohol","alcohol","alcohol","alcohol","alcohol"],"y":[12,1,9,4,5,1,2,5,1,9,6,12,11,1],"type":"box","name":"alcohol","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(172,179,141,0.5)","x":["babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies","babies"],"y":[16,3,3,11,18,6,1,7,11,5,5,9,3,3,13,21,21,8,14,11,4,8,3,20,5,12,12,4,34,2,28,8,23,24,8,1,33,4,7,2,29,10,4,20,10,14,10],"type":"box","name":"babies","marker":{"color":"rgba(172,179,141,1)","line":{"color":"rgba(172,179,141,1)"}},"line":{"color":"rgba(172,179,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(219,161,118,0.5)","x":["bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery","bakery"],"y":[8,5,2,2,6,6,6,9,3,8,10,33,5,6,1,11,1,3,1,13,26,4,12,4,1,10,2,2,5,5,5,9,23,3,13,6,6,5,1,1,4,11,10,21,12,22,7,25,3,37,1,3,3,11,15,16,1,11,29,10,7,3,9,9,4,11,5,10,3,6,2,7,16,3,5,8,3,2,1,4,6,18,1,2,8,20,3,8,6,4,20,6,2,14,5,3,17,2,6,6,3,1,1,14,4,5,1,2,3,7,6,4,5,4,10,5,2,2,15],"type":"box","name":"bakery","marker":{"color":"rgba(219,161,118,1)","line":{"color":"rgba(219,161,118,1)"}},"line":{"color":"rgba(219,161,118,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(248,142,103,0.5)","x":["beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages","beverages"],"y":[23,5,8,1,3,12,15,1,1,5,2,8,15,7,2,7,2,10,1,1,3,58,2,1,20,1,6,2,3,2,9,5,2,3,5,8,4,2,2,7,10,23,1,7,20,5,1,5,17,9,2,6,2,2,2,7,1,9,7,17,11,5,9,17,1,1,10,8,1,19,1,5,4,7,14,4,19,1,2,10,1,4,10,7,3,5,4,1,8,16,4,1,3,4,12,15,7,4,1,3,6,7,2,4,7,8,2,6,1,27,13,2,2,4,18,16,2,8,1,5,1,26,4,3,5,1,19,5,5,19,3,2,3,8,8,4,14,5,18,17,1,16,2,1,8,21,2,7,12,8,2,3,1,7,4,1,6,1,48,2,5,6,7,3,1,1,28,8,2,17,7,2,1,15,3,5,1,28,10,1,3,5,8,6,4,6,10,2,6,2,3,2,3,13,25,1,2,4,1,1,1,2,21,5,3,10,5,3,2,4,3,3,20,1,2,1,1,8,1,7,4,15,4,3,3,14,7],"type":"box","name":"beverages","marker":{"color":"rgba(248,142,103,1)","line":{"color":"rgba(248,142,103,1)"}},"line":{"color":"rgba(248,142,103,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(217,150,141,0.5)","x":["breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast","breakfast"],"y":[8,14,8,7,11,12,2,23,3,11,1,13,4,22,10,12,34,11,10,28,6,1,29,12,5,9,7,12,4,19,7,11,4,3,19,20,9,12,7,7,6,9,1,2,16,1,4,4,7,5,9,13,3,2,4,15,11,1,23,21,14,8,3,15,4,1,8,2,9,6,5,10,18,11,3,6,5],"type":"box","name":"breakfast","marker":{"color":"rgba(217,150,141,1)","line":{"color":"rgba(217,150,141,1)"}},"line":{"color":"rgba(217,150,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(178,156,177,0.5)","x":["bulk","bulk","bulk","bulk","bulk","bulk","bulk"],"y":[9,5,3,1,6,5,1],"type":"box","name":"bulk","marker":{"color":"rgba(178,156,177,1)","line":{"color":"rgba(178,156,177,1)"}},"line":{"color":"rgba(178,156,177,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(152,158,202,0.5)","x":["canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods","canned goods"],"y":[14,22,10,4,5,10,13,11,7,9,2,8,11,16,10,8,11,7,7,7,2,6,21,24,23,1,7,13,24,1,5,4,10,8,2,9,2,8,12,4,10,6,14,5,6,14,1,13,10,4,9,21,9,6,22,4,25,8,46,24,12,13,28,1,3,7,6,9,36,10,10,19,8,8,4,6,8,8,3,25,6,29,20,6,1,3,16,28,12,23],"type":"box","name":"canned goods","marker":{"color":"rgba(152,158,202,1)","line":{"color":"rgba(152,158,202,1)"}},"line":{"color":"rgba(152,158,202,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(185,152,199,0.5)","x":["dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs","dairy eggs"],"y":[21,17,5,7,45,10,2,9,18,8,8,6,3,12,2,5,8,7,14,1,4,17,12,23,2,3,21,6,1,10,2,7,10,22,8,5,2,5,3,5,3,7,30,21,8,14,3,2,5,6,3,10,5,8,6,8,6,4,3,3,10,10,3,15,15,7,16,13,1,9,5,2,4,2,5,11,3,7,1,2,4,1,7,7,3,6,3,13,2,5,6,12,17,3,17,10,14,2,4,35,1,4,7,1,12,8,5,4,5,10,3,21,12,4,2,2,7,4,2,3,2,17,9,2,2,21,8,16,4,2,22,19,1,32,4,3,14,8,3,8,9,2,7,1,13,2,4,3,2,1,1,8,1,6,27,3,15,2,1,9,7,4,17,1,9,6,2,1,5,5,7,5,4,9,10,12,8,25,7,2,10,26,1,17,12,5,3,1,2,7,19,9,9,21,8,22,22,11,13,10,16,7,8,7,27,1,6,1,4,5,17,18,3,4,7,4,5,5,2,18,2,4,1,5,6,3,3,3,1,9,3,8,3,8,14,10,4,3,8,1,16,5,11,7,20,2,2,5,1,2,3,1,13,1,2,7,5,2,1,37,2,6,2,5,6,1,7,3,8,4,5,9,1,12,25,4,3,16,25,12,4,4,2,73,10,8,21,17,3,10,5,13,12,1,4,6,6,10,25,1,9,13,9,3,6,2,13,5,7,4,11,4,5,9,8,9,11,8,12,5,4,7,4,8,10,5,4,4,1,7,14,1,2,5,2,5,7,7,11,12,22,4,12,21,4,27,4,3,1,6,5,4,8,3,6,4,2,7,5,4,8,6,3,3,10,9,14,8,1,17,7,4,5,2,2,3,8,13,6,13,2,11,5,8,3,6,9,11,2,4,1,11,5,8,4,14,1,3,3,1,10,1,4,1,9,6,2,5,1,6,6,6,15,1,3,24,9,10,4,4,7,3,10,4,4,5,1,9,1,3,21,7,5,6,6,15,3,5,4,5,3,6,1,1,17,17,5,3,5,6,5,1,11,8,5,5,3,3,9,5,4,7,10,5,4,9,4,2,6,1,1,14,2],"type":"box","name":"dairy eggs","marker":{"color":"rgba(185,152,199,1)","line":{"color":"rgba(185,152,199,1)"}},"line":{"color":"rgba(185,152,199,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(215,144,197,0.5)","x":["deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli","deli"],"y":[2,6,1,3,25,15,6,11,5,10,3,10,2,2,3,13,5,16,8,10,16,11,9,2,2,7,1,10,7,25,2,1,7,19,10,18,5,6,5,18,2,3,2,4,14,1,7,10,14,5,24,4,13,4,8,30,4,4,2,11,8,4,4,5,11,32,2,6,5,8,11,34,5,11,8,2,12,6,1,10,18,11,19,8,2,4,2,1,24,4,13,5,44,10,7,9,8,7,8,6,1,4,28,10,2,1,9,13,11,5,10],"type":"box","name":"deli","marker":{"color":"rgba(215,144,197,1)","line":{"color":"rgba(215,144,197,1)"}},"line":{"color":"rgba(215,144,197,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(224,152,180,0.5)","x":["dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta","dry goods pasta"],"y":[16,1,22,3,12,28,9,10,5,8,1,4,17,1,6,11,2,8,8,12,16,8,6,9,7,8,19,24,8,16,2,2,3,7,23,4,43,10,18,2,13,1,13,5,6,9,7,7,20,7,11,32,6,16,9,3,4,17,30,10,23,20,10,8,12,13,31,6],"type":"box","name":"dry goods pasta","marker":{"color":"rgba(224,152,180,1)","line":{"color":"rgba(224,152,180,1)"}},"line":{"color":"rgba(224,152,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(205,180,144,0.5)","x":["frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen","frozen"],"y":[6,11,8,16,25,4,3,2,12,30,6,11,4,5,2,1,1,9,24,8,1,8,13,13,26,11,10,6,4,17,20,6,30,4,4,5,1,9,9,4,32,14,14,1,6,5,5,14,5,11,10,7,16,4,3,2,6,14,18,4,8,7,1,11,20,10,1,4,5,23,25,4,6,2,7,18,41,14,13,3,11,5,15,3,7,7,1,8,16,3,10,2,5,26,21,13,6,1,5,15,5,7,3,8,8,16,14,6,6,8,10,2,6,22,13,3,17,31,9,13,5,1,6,8,23,4,10,11,14,14,5,8,10,16,22,18,12,4,1,4,4,1,15,18,19,7,3,18,5,6,2,3,2,33,4,3,5,9,1,6,19,3,27,32,2,10,2,1,11,5,1,5,9,7,9,35,19,2,6,3,7,11,26,1,8,3,8,1,7,11,7,1,2,3,2,4,26,11,5,26,8,7,7,3],"type":"box","name":"frozen","marker":{"color":"rgba(205,180,144,1)","line":{"color":"rgba(205,180,144,1)"}},"line":{"color":"rgba(205,180,144,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(180,206,104,0.5)","x":["household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household","household"],"y":[2,38,9,1,5,8,3,1,7,7,8,18,6,11,9,6,8,2,21,2,3,11,3,35,7,27,1,2,2,2,3,1,1,9,20,5,13,4,13,1,7,5,4,2,10,7,5,31,14,4,10,38,3,16,12,10,1,4,23,9,3,13,3,22,6,2,4,5,23,2,4,10,1,17,4,6,20,5,25],"type":"box","name":"household","marker":{"color":"rgba(180,206,104,1)","line":{"color":"rgba(180,206,104,1)"}},"line":{"color":"rgba(180,206,104,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(186,217,78,0.5)","x":["international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international","international"],"y":[7,8,6,3,2,7,6,2,7,1,15,2,9,1,8,1,3,4,15,5,10,8,5,20,6,26,14,9,5],"type":"box","name":"international","marker":{"color":"rgba(186,217,78,1)","line":{"color":"rgba(186,217,78,1)"}},"line":{"color":"rgba(186,217,78,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(217,217,66,0.5)","x":["meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood","meat seafood"],"y":[1,12,9,15,9,9,7,13,30,2,2,7,5,1,10,11,3,19,10,2,25,8,10,7,5,4,5,18,1,2,5,12,1,12,1,12,3,3,17,1,8,9,7,10,2,6,6,5,34,2,18,23,8,21,3,6,7,13,19,16],"type":"box","name":"meat seafood","marker":{"color":"rgba(217,217,66,1)","line":{"color":"rgba(217,217,66,1)"}},"line":{"color":"rgba(217,217,66,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(247,217,52,0.5)","x":["missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing","missing"],"y":[3,3,4,8,11,10,4,32,2,14,3,23,4,14,8,14,16,13,4,18],"type":"box","name":"missing","marker":{"color":"rgba(247,217,52,1)","line":{"color":"rgba(247,217,52,1)"}},"line":{"color":"rgba(247,217,52,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(250,212,80,0.5)","x":["other","other","other"],"y":[27,3,10],"type":"box","name":"other","marker":{"color":"rgba(250,212,80,1)","line":{"color":"rgba(250,212,80,1)"}},"line":{"color":"rgba(250,212,80,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(241,204,114,0.5)","x":["pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry","pantry"],"y":[2,6,8,4,5,2,26,10,10,3,6,5,19,7,4,3,6,9,16,17,4,5,6,7,8,12,31,11,9,11,22,11,26,24,8,8,15,22,18,17,4,10,8,8,4,17,7,4,16,1,18,7,19,6,1,12,11,3,9,4,27,4,23,5,27,7,12,4,6,20,5,6,1,4,5,15,11,3,9,8,15,10,1,31,24,3,15,15,33,5,6,13,2,6,28,23,25,5,16,6,9,4,5,24,12,2,9,1,5,11,3,23,3,7,10,11,35,4,14,25,28,3,15,13,1,23,28,9,27,13,2,33,6,3,5,32,1,9,9,6,6,23,18,6,1,12,3,15,1,21,14,24,3,9,28,10,1,7,29,5,17,6,1,6,14,11,2,22,7,7,5,17,5,5,23,3,9,4,11,7,13,2,1,3,36,3,1,17,7,20,20,9,19,4],"type":"box","name":"pantry","marker":{"color":"rgba(241,204,114,1)","line":{"color":"rgba(241,204,114,1)"}},"line":{"color":"rgba(241,204,114,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(231,197,144,0.5)","x":["personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care","personal care"],"y":[1,7,6,14,4,20,7,5,22,1,6,1,14,3,1,1,18,4,3,7,3,19,5,1,3,3,7,21,5,3,18,5,1,20,10,2,10,16,5,1,26,5,3,8,3,7,3],"type":"box","name":"personal care","marker":{"color":"rgba(231,197,144,1)","line":{"color":"rgba(231,197,144,1)"}},"line":{"color":"rgba(231,197,144,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(215,191,158,0.5)","x":["pets","pets","pets","pets","pets","pets","pets"],"y":[6,17,6,13,10,4,13],"type":"box","name":"pets","marker":{"color":"rgba(215,191,158,1)","line":{"color":"rgba(215,191,158,1)"}},"line":{"color":"rgba(215,191,158,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(198,185,168,0.5)","x":["produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce","produce"],"y":[2,24,6,30,9,12,25,4,8,5,3,10,20,5,16,6,10,1,5,18,13,12,2,5,6,5,23,15,16,1,8,11,20,4,11,14,5,2,1,6,11,5,22,18,1,9,9,2,2,4,13,9,9,3,11,2,12,1,9,21,12,1,14,6,6,10,6,7,16,26,14,6,8,4,5,1,3,9,24,14,1,7,1,11,12,15,11,8,4,18,5,1,24,10,9,4,2,1,18,11,9,13,7,2,8,3,6,3,13,16,18,2,10,1,10,5,5,3,26,25,1,3,6,11,25,8,1,2,10,2,10,12,3,3,9,11,16,5,6,6,18,3,10,15,5,6,1,20,5,4,7,2,9,15,7,7,2,3,12,11,1,4,4,6,4,23,7,9,4,5,10,2,1,2,20,2,3,11,4,1,6,4,18,2,1,7,6,9,11,9,6,11,5,11,5,7,4,3,11,13,3,4,12,2,1,17,8,5,20,11,5,9,3,10,1,3,7,15,6,8,29,8,4,19,3,12,21,7,12,4,8,12,4,9,7,6,11,5,9,6,13,4,13,23,8,5,9,7,8,8,26,2,3,12,5,15,9,1,4,9,15,12,3,10,34,4,13,7,2,15,5,4,9,22,5,2,2,11,5,1,11,3,1,14,2,1,16,17,2,7,8,19,17,5,1,19,14,6,5,7,1,22,5,2,10,1,18,12,23,26,11,10,4,2,22,1,17,6,21,1,11,1,6,17,8,21,12,8,2,7,11,3,9,2,16,2,16,4,1,12,13,9,7,1,6,2,1,18,6,1,2,5,1,8,5,8,13,7,7,15,3,22,12,15,2,12,2,13,2,5,3,3,1,2,10,25,3,20,23,7,10,3,10,3,4,8,1,2,3,4,25,4,11,15,10,11,7,1,14,2,3,27,2,1,7,5,11,7,5,2,1,11,4,7,15,3,2,6,15,15,4,6,1,4,9,4,5,6,5,27,18,9,1,2,4,4,2,16,2,5,2,12,17,7,20,21,4,5,8,4,2,4,12,32,5,4,6,3,6,3,4,1,4,9,17,3,6,13,6,6,4,18,7,4,19,2,1,7,14,3,6,18,7,3,2,19,5,7,6,1,4,5,3,4,4,1,24,11,9,6,24,9,7,11,2,1,12,11,5,1,16,2,2,18,4,2,11,5,13,1,4,4,7,12,12,8,5,12,3,18,3,1,3,20,9,6,9,4,4,4,3,3,4,40,14,17,10,1,23,4,9,13,2,6,4,6,23,4,1,9,18,15,4,6,7,7,15,11,10,7,3,8,11,7,20,2,9,2,2,1,2,14,3,9,19,5,9,5,9,1,20,13,12,12,2,9,2,5,8,6,29,31,1,1,5,3,1,1,2,2,6,8,2,1,9,11,12,6,27,8,2,3,4,9,4,5,2,1,5,11,18,1,6,12,20,17,1,2,4,6,3,2,4,3,21,15,12,3,1,22,18,13,15,2,3,3,8,11,1,11,24,19,11,9,19,12,17,7,16,17,6,20,2,13,3,6,6,1,2,1,18,5,14,11,13,17,1,4,22,1,7,15,7,9,3,2,30,5,8,17,2,6,2,21,6,8,1,4,9,3,5,11,3,7,3,1,8,12,14,13,1,3,3,13,1,6,4,9,10,12,15,10,13,7,12,11,4,5,9,23,7,2,23,3,7,6,8,6,3,9,8,19,3,2,14,2,1,2,4,16,7,8,3,4,7,6,7,6,2,13,1,10,7,1,7,8,15,16,7,9,2,4,9,14,3,4,6,3,15,8,12,5,2,27,2,2,4,4,6,6,11,6,1,4,2,10,4,3,18,8,7,12,6,7,8,5,3,4,9,4,2,3,14,6,4,5,10,7,19,29,2,2,5,9,1,4,14,28,7,2,7,14,3,2,25,1,13,3,9,17,5,7,3,9,6,16,20,32,6,4,9,5,1],"type":"box","name":"produce","marker":{"color":"rgba(198,185,168,1)","line":{"color":"rgba(198,185,168,1)"}},"line":{"color":"rgba(198,185,168,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(179,179,179,0.5)","x":["snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks","snacks"],"y":[2,4,2,13,13,5,2,1,3,9,8,17,13,9,12,8,3,21,16,3,10,2,13,42,11,18,2,4,5,5,6,12,26,9,15,4,16,7,18,5,2,10,33,6,20,6,1,22,3,8,1,3,7,15,3,9,1,7,14,8,13,5,2,4,6,2,4,2,9,4,12,21,2,1,40,8,17,5,9,22,29,15,4,3,5,29,13,2,1,13,6,7,13,22,38,14,16,3,3,1,4,6,3,14,7,19,15,7,7,3,16,3,7,4,4,1,12,9,17,3,4,7,13,8,2,5,8,1,8,16,23,2,12,2,8,17,20,13,4,19,12,1,7,3,3,3,13,5,5,8,22,9,7,13,20,1,2,30,1,2,8,19,11,18,11,20,25,3,22,12,8,12,6,8,6,2,5,2,2,6,2,13,8,6,1,2,8,2,2,4,38,15,12,4,12,8,18,1,10,1,9,8,4,2,3,13,8,17,1,2,3,52,5,6,12,11,14,11,6,32,6,20,13,13,12,13,5,4,22,4,5,14,25,2,5,9,10,2,32,5,15,8,2,3,11,1,57,13,17,15,5,3,2,3,3,1,2,15,13,17,6],"type":"box","name":"snacks","marker":{"color":"rgba(179,179,179,1)","line":{"color":"rgba(179,179,179,1)"}},"line":{"color":"rgba(179,179,179,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="section-column-3-scatter-plot" class="section level3">
+<h3><strong>Column 3: Scatter Plot</strong></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-885248fa23bf0f7ccc21" style="width:576px;height:460.8px;"></div>
+<script type="application/json" data-for="htmlwidget-885248fa23bf0f7ccc21">{"x":{"visdat":{"4c705e707e50":["function () ","plotlyVisDat"]},"cur_data":"4c705e707e50","attrs":{"4c705e707e50":{"x":{},"y":{},"mode":"markers","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Aisle vs Add-to-Cart Order","xaxis":{"domain":[0,1],"automargin":true,"title":"Aisle ID"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Add-to-Cart Order"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[28,134,28,62,62,27,124,28,124,124,27,124,28,134],"y":[12,1,9,4,5,1,2,5,1,9,6,12,11,1],"mode":"markers","type":"scatter","name":"alcohol","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[92,92,92,92,92,92,56,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,56,92,92,92,92,92,92,92,82,92,92,92,92,56,82,92,92,92,92,92],"y":[16,3,3,11,18,6,1,7,11,5,5,9,3,3,13,21,21,8,14,11,4,8,3,20,5,12,12,4,34,2,28,8,23,24,8,1,33,4,7,2,29,10,4,20,10,14,10],"mode":"markers","type":"scatter","name":"babies","marker":{"color":"rgba(172,179,141,1)","line":{"color":"rgba(172,179,141,1)"}},"textfont":{"color":"rgba(172,179,141,1)"},"error_y":{"color":"rgba(172,179,141,1)"},"error_x":{"color":"rgba(172,179,141,1)"},"line":{"color":"rgba(172,179,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[112,112,112,128,128,8,112,112,93,112,112,128,93,93,112,112,93,112,93,112,128,112,43,112,93,112,112,93,112,112,93,112,93,112,93,43,112,112,112,112,112,93,128,112,112,112,93,43,112,112,112,93,112,112,93,112,112,93,128,93,8,112,112,112,128,93,112,128,128,43,112,128,112,112,93,112,112,112,112,43,43,128,112,93,112,128,112,112,112,112,128,43,93,93,128,128,93,112,43,93,112,112,112,128,112,112,112,112,93,43,128,8,128,112,128,112,93,112,112],"y":[8,5,2,2,6,6,6,9,3,8,10,33,5,6,1,11,1,3,1,13,26,4,12,4,1,10,2,2,5,5,5,9,23,3,13,6,6,5,1,1,4,11,10,21,12,22,7,25,3,37,1,3,3,11,15,16,1,11,29,10,7,3,9,9,4,11,5,10,3,6,2,7,16,3,5,8,3,2,1,4,6,18,1,2,8,20,3,8,6,4,20,6,2,14,5,3,17,2,6,6,3,1,1,14,4,5,1,2,3,7,6,4,5,4,10,5,2,2,15],"mode":"markers","type":"scatter","name":"bakery","marker":{"color":"rgba(219,161,118,1)","line":{"color":"rgba(219,161,118,1)"}},"textfont":{"color":"rgba(219,161,118,1)"},"error_y":{"color":"rgba(219,161,118,1)"},"error_x":{"color":"rgba(219,161,118,1)"},"line":{"color":"rgba(219,161,118,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[115,115,98,115,98,31,98,31,115,115,115,94,94,94,31,98,64,77,115,94,115,26,77,115,115,115,115,94,26,115,98,115,77,98,31,115,31,77,115,31,77,77,94,94,115,115,77,31,115,115,26,94,115,115,94,31,115,115,90,115,77,98,115,115,26,98,98,115,64,98,94,31,115,98,115,31,31,98,31,98,64,98,31,94,31,26,90,115,77,77,31,31,98,115,77,31,77,77,115,77,115,94,115,115,94,31,77,31,115,77,98,115,26,115,31,94,115,115,77,26,115,115,115,31,64,64,31,77,115,94,31,31,31,31,98,115,64,77,26,77,98,115,31,77,64,31,98,115,94,31,98,31,77,115,31,115,31,115,77,64,94,77,115,98,31,98,94,26,115,77,90,94,115,115,64,31,77,64,98,77,26,26,115,115,31,115,98,77,115,64,98,31,31,115,115,115,94,98,77,64,115,115,77,115,26,31,115,94,26,31,77,94,98,115,31,31,115,26,115,98,31,94,31,77,64,94,115],"y":[23,5,8,1,3,12,15,1,1,5,2,8,15,7,2,7,2,10,1,1,3,58,2,1,20,1,6,2,3,2,9,5,2,3,5,8,4,2,2,7,10,23,1,7,20,5,1,5,17,9,2,6,2,2,2,7,1,9,7,17,11,5,9,17,1,1,10,8,1,19,1,5,4,7,14,4,19,1,2,10,1,4,10,7,3,5,4,1,8,16,4,1,3,4,12,15,7,4,1,3,6,7,2,4,7,8,2,6,1,27,13,2,2,4,18,16,2,8,1,5,1,26,4,3,5,1,19,5,5,19,3,2,3,8,8,4,14,5,18,17,1,16,2,1,8,21,2,7,12,8,2,3,1,7,4,1,6,1,48,2,5,6,7,3,1,1,28,8,2,17,7,2,1,15,3,5,1,28,10,1,3,5,8,6,4,6,10,2,6,2,3,2,3,13,25,1,2,4,1,1,1,2,21,5,3,10,5,3,2,4,3,3,20,1,2,1,1,8,1,7,4,15,4,3,3,14,7],"mode":"markers","type":"scatter","name":"beverages","marker":{"color":"rgba(248,142,103,1)","line":{"color":"rgba(248,142,103,1)"}},"textfont":{"color":"rgba(248,142,103,1)"},"error_y":{"color":"rgba(248,142,103,1)"},"error_x":{"color":"rgba(248,142,103,1)"},"line":{"color":"rgba(248,142,103,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[130,121,121,130,121,130,121,121,121,121,121,121,121,121,121,130,121,121,130,48,48,121,130,121,130,121,121,121,121,48,130,48,121,121,121,130,130,121,48,130,121,121,130,130,121,121,121,121,121,121,121,121,130,121,121,121,48,130,57,48,130,57,121,130,57,57,121,130,48,48,121,121,48,57,121,48,121],"y":[8,14,8,7,11,12,2,23,3,11,1,13,4,22,10,12,34,11,10,28,6,1,29,12,5,9,7,12,4,19,7,11,4,3,19,20,9,12,7,7,6,9,1,2,16,1,4,4,7,5,9,13,3,2,4,15,11,1,23,21,14,8,3,15,4,1,8,2,9,6,5,10,18,11,3,6,5],"mode":"markers","type":"scatter","name":"breakfast","marker":{"color":"rgba(217,150,141,1)","line":{"color":"rgba(217,150,141,1)"}},"textfont":{"color":"rgba(217,150,141,1)"},"error_y":{"color":"rgba(217,150,141,1)"},"error_x":{"color":"rgba(217,150,141,1)"},"line":{"color":"rgba(217,150,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[68,18,68,68,68,68,18],"y":[9,5,3,1,6,5,1],"mode":"markers","type":"scatter","name":"bulk","marker":{"color":"rgba(178,156,177,1)","line":{"color":"rgba(178,156,177,1)"}},"textfont":{"color":"rgba(178,156,177,1)"},"error_y":{"color":"rgba(178,156,177,1)"},"error_x":{"color":"rgba(178,156,177,1)"},"line":{"color":"rgba(178,156,177,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[69,59,59,69,59,81,59,99,59,59,95,59,81,59,69,81,69,69,69,69,99,81,81,69,81,95,95,99,69,69,69,99,59,69,69,81,59,69,59,81,69,69,99,69,59,59,69,69,81,99,69,81,69,81,69,81,59,81,81,81,81,69,95,99,59,59,59,69,81,69,69,81,59,69,69,81,69,81,59,69,81,69,69,99,59,81,81,59,81,81],"y":[14,22,10,4,5,10,13,11,7,9,2,8,11,16,10,8,11,7,7,7,2,6,21,24,23,1,7,13,24,1,5,4,10,8,2,9,2,8,12,4,10,6,14,5,6,14,1,13,10,4,9,21,9,6,22,4,25,8,46,24,12,13,28,1,3,7,6,9,36,10,10,19,8,8,4,6,8,8,3,25,6,29,20,6,1,3,16,28,12,23],"mode":"markers","type":"scatter","name":"canned goods","marker":{"color":"rgba(152,158,202,1)","line":{"color":"rgba(152,158,202,1)"}},"textfont":{"color":"rgba(152,158,202,1)"},"error_y":{"color":"rgba(152,158,202,1)"},"error_x":{"color":"rgba(152,158,202,1)"},"line":{"color":"rgba(152,158,202,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[108,108,53,21,21,108,21,84,120,53,84,120,84,71,108,91,108,86,21,91,120,21,120,21,91,91,21,53,84,91,91,53,21,21,108,120,36,86,120,21,120,21,91,120,2,21,53,21,86,120,53,21,120,120,91,120,21,91,86,120,120,84,84,91,108,86,91,84,21,91,84,91,120,21,21,21,120,86,86,84,84,120,21,86,21,86,2,21,21,108,21,91,21,21,53,120,120,53,108,120,84,120,53,120,91,84,84,91,86,53,84,84,21,91,86,84,120,84,84,84,120,86,91,21,120,21,84,86,120,120,108,86,91,84,120,21,108,84,84,120,36,84,108,84,36,91,120,91,53,120,84,120,84,86,120,120,86,91,53,91,91,21,36,84,91,120,84,120,84,91,21,120,84,91,84,120,86,21,108,53,86,91,120,108,36,108,91,120,53,91,120,91,86,2,108,2,21,84,86,91,91,84,120,21,120,120,84,120,120,21,21,84,120,120,86,120,91,120,84,21,120,84,86,120,120,21,21,91,91,120,108,120,84,84,108,53,36,84,120,84,53,84,84,53,120,21,91,84,84,86,120,120,21,84,120,84,21,86,84,120,36,21,86,91,21,108,120,120,84,91,21,120,120,91,21,108,71,120,120,120,84,120,108,91,120,21,21,53,120,84,84,120,120,120,36,21,108,91,21,84,21,120,36,21,21,86,36,120,21,108,21,120,120,21,91,84,84,21,120,84,120,21,91,84,21,120,120,120,120,91,120,120,91,91,120,91,21,84,86,53,36,120,120,86,108,21,84,53,84,36,53,91,36,120,120,86,84,86,21,91,108,84,91,120,108,21,21,84,21,120,91,84,21,91,91,53,120,91,120,120,84,36,108,84,120,84,120,21,84,120,84,21,21,21,120,53,84,120,120,120,86,91,120,84,108,21,21,120,84,120,53,120,91,84,86,36,21,120,84,53,120,53,21,120,21,84,84,21,91,84,120,86,36,36,120,120,21,36,120,108,120,120,53,91,21,21,86,120,120,21,53,91,120,108,120,21,120,120,120,84,91,108,21,71,120,84,86,53,120,120,120,21,21],"y":[21,17,5,7,45,10,2,9,18,8,8,6,3,12,2,5,8,7,14,1,4,17,12,23,2,3,21,6,1,10,2,7,10,22,8,5,2,5,3,5,3,7,30,21,8,14,3,2,5,6,3,10,5,8,6,8,6,4,3,3,10,10,3,15,15,7,16,13,1,9,5,2,4,2,5,11,3,7,1,2,4,1,7,7,3,6,3,13,2,5,6,12,17,3,17,10,14,2,4,35,1,4,7,1,12,8,5,4,5,10,3,21,12,4,2,2,7,4,2,3,2,17,9,2,2,21,8,16,4,2,22,19,1,32,4,3,14,8,3,8,9,2,7,1,13,2,4,3,2,1,1,8,1,6,27,3,15,2,1,9,7,4,17,1,9,6,2,1,5,5,7,5,4,9,10,12,8,25,7,2,10,26,1,17,12,5,3,1,2,7,19,9,9,21,8,22,22,11,13,10,16,7,8,7,27,1,6,1,4,5,17,18,3,4,7,4,5,5,2,18,2,4,1,5,6,3,3,3,1,9,3,8,3,8,14,10,4,3,8,1,16,5,11,7,20,2,2,5,1,2,3,1,13,1,2,7,5,2,1,37,2,6,2,5,6,1,7,3,8,4,5,9,1,12,25,4,3,16,25,12,4,4,2,73,10,8,21,17,3,10,5,13,12,1,4,6,6,10,25,1,9,13,9,3,6,2,13,5,7,4,11,4,5,9,8,9,11,8,12,5,4,7,4,8,10,5,4,4,1,7,14,1,2,5,2,5,7,7,11,12,22,4,12,21,4,27,4,3,1,6,5,4,8,3,6,4,2,7,5,4,8,6,3,3,10,9,14,8,1,17,7,4,5,2,2,3,8,13,6,13,2,11,5,8,3,6,9,11,2,4,1,11,5,8,4,14,1,3,3,1,10,1,4,1,9,6,2,5,1,6,6,6,15,1,3,24,9,10,4,4,7,3,10,4,4,5,1,9,1,3,21,7,5,6,6,15,3,5,4,5,3,6,1,1,17,17,5,3,5,6,5,1,11,8,5,5,3,3,9,5,4,7,10,5,4,9,4,2,6,1,1,14,2],"mode":"markers","type":"scatter","name":"dairy eggs","marker":{"color":"rgba(185,152,199,1)","line":{"color":"rgba(185,152,199,1)"}},"textfont":{"color":"rgba(185,152,199,1)"},"error_y":{"color":"rgba(185,152,199,1)"},"error_x":{"color":"rgba(185,152,199,1)"},"line":{"color":"rgba(185,152,199,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[67,96,67,96,67,96,14,96,96,1,96,67,67,67,96,67,96,67,67,13,67,67,67,96,13,67,67,96,67,96,96,96,14,14,14,67,96,67,67,1,1,67,96,96,96,67,67,1,96,67,1,96,96,1,67,96,96,96,67,96,67,96,1,67,13,67,67,67,96,67,96,67,13,96,67,96,67,96,96,67,1,67,96,67,67,67,96,13,67,96,96,67,67,96,67,67,96,13,1,14,67,14,67,96,96,14,67,14,13,13,67],"y":[2,6,1,3,25,15,6,11,5,10,3,10,2,2,3,13,5,16,8,10,16,11,9,2,2,7,1,10,7,25,2,1,7,19,10,18,5,6,5,18,2,3,2,4,14,1,7,10,14,5,24,4,13,4,8,30,4,4,2,11,8,4,4,5,11,32,2,6,5,8,11,34,5,11,8,2,12,6,1,10,18,11,19,8,2,4,2,1,24,4,13,5,44,10,7,9,8,7,8,6,1,4,28,10,2,1,9,13,11,5,10],"mode":"markers","type":"scatter","name":"deli","marker":{"color":"rgba(215,144,197,1)","line":{"color":"rgba(215,144,197,1)"}},"textfont":{"color":"rgba(215,144,197,1)"},"error_y":{"color":"rgba(215,144,197,1)"},"error_x":{"color":"rgba(215,144,197,1)"},"line":{"color":"rgba(215,144,197,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[63,63,4,131,4,131,131,63,131,9,4,4,131,63,131,9,9,9,131,4,131,131,4,131,63,131,131,4,4,131,9,131,63,131,9,131,131,12,9,63,4,63,131,4,4,131,63,63,131,9,4,9,4,4,131,4,131,63,4,9,131,63,4,4,9,9,63,9],"y":[16,1,22,3,12,28,9,10,5,8,1,4,17,1,6,11,2,8,8,12,16,8,6,9,7,8,19,24,8,16,2,2,3,7,23,4,43,10,18,2,13,1,13,5,6,9,7,7,20,7,11,32,6,16,9,3,4,17,30,10,23,20,10,8,12,13,31,6],"mode":"markers","type":"scatter","name":"dry goods pasta","marker":{"color":"rgba(224,152,180,1)","line":{"color":"rgba(224,152,180,1)"}},"textfont":{"color":"rgba(224,152,180,1)"},"error_y":{"color":"rgba(224,152,180,1)"},"error_x":{"color":"rgba(224,152,180,1)"},"line":{"color":"rgba(224,152,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[116,52,42,52,129,38,37,37,116,38,37,38,79,116,37,37,37,79,129,38,129,52,38,116,42,52,42,34,37,116,38,129,37,37,37,38,116,38,38,116,38,52,37,37,37,79,38,38,42,116,37,38,34,37,58,38,79,38,116,38,129,37,116,116,37,116,37,34,37,116,37,52,116,37,79,79,38,116,34,37,52,38,116,37,38,116,37,37,116,38,52,116,116,37,79,79,116,37,129,37,116,37,52,52,38,116,79,129,116,52,38,116,37,116,116,42,38,116,58,116,52,34,38,116,37,38,38,37,42,116,129,79,38,42,79,116,52,52,52,38,116,38,116,116,79,129,37,38,116,129,38,37,79,116,42,52,116,116,37,58,116,37,37,38,38,79,34,38,116,37,38,116,52,38,38,37,38,129,129,38,52,37,52,129,34,37,116,52,116,37,38,42,37,116,38,79,129,52,52,116,37,38,38,38],"y":[6,11,8,16,25,4,3,2,12,30,6,11,4,5,2,1,1,9,24,8,1,8,13,13,26,11,10,6,4,17,20,6,30,4,4,5,1,9,9,4,32,14,14,1,6,5,5,14,5,11,10,7,16,4,3,2,6,14,18,4,8,7,1,11,20,10,1,4,5,23,25,4,6,2,7,18,41,14,13,3,11,5,15,3,7,7,1,8,16,3,10,2,5,26,21,13,6,1,5,15,5,7,3,8,8,16,14,6,6,8,10,2,6,22,13,3,17,31,9,13,5,1,6,8,23,4,10,11,14,14,5,8,10,16,22,18,12,4,1,4,4,1,15,18,19,7,3,18,5,6,2,3,2,33,4,3,5,9,1,6,19,3,27,32,2,10,2,1,11,5,1,5,9,7,9,35,19,2,6,3,7,11,26,1,8,3,8,1,7,11,7,1,2,3,2,4,26,11,5,26,8,7,7,3],"mode":"markers","type":"scatter","name":"frozen","marker":{"color":"rgba(205,180,144,1)","line":{"color":"rgba(205,180,144,1)"}},"textfont":{"color":"rgba(205,180,144,1)"},"error_y":{"color":"rgba(205,180,144,1)"},"error_x":{"color":"rgba(205,180,144,1)"},"line":{"color":"rgba(205,180,144,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[54,54,75,85,101,54,10,54,54,54,54,60,114,101,54,101,10,111,60,111,54,54,54,74,54,74,54,54,54,111,54,54,75,54,114,114,54,54,54,54,54,75,111,114,75,114,54,54,75,54,74,74,54,54,54,114,60,75,85,111,54,114,114,54,87,74,60,114,75,75,114,74,114,54,74,54,114,74,75],"y":[2,38,9,1,5,8,3,1,7,7,8,18,6,11,9,6,8,2,21,2,3,11,3,35,7,27,1,2,2,2,3,1,1,9,20,5,13,4,13,1,7,5,4,2,10,7,5,31,14,4,10,38,3,16,12,10,1,4,23,9,3,13,3,22,6,2,4,5,23,2,4,10,1,17,4,6,20,5,25],"mode":"markers","type":"scatter","name":"household","marker":{"color":"rgba(180,206,104,1)","line":{"color":"rgba(180,206,104,1)"}},"textfont":{"color":"rgba(180,206,104,1)"},"error_y":{"color":"rgba(180,206,104,1)"},"error_x":{"color":"rgba(180,206,104,1)"},"line":{"color":"rgba(180,206,104,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[66,66,30,66,66,30,66,33,66,33,30,66,30,33,66,66,66,30,33,66,30,66,66,66,30,30,66,30,66],"y":[7,8,6,3,2,7,6,2,7,1,15,2,9,1,8,1,3,4,15,5,10,8,5,20,6,26,14,9,5],"mode":"markers","type":"scatter","name":"international","marker":{"color":"rgba(186,217,78,1)","line":{"color":"rgba(186,217,78,1)"}},"textfont":{"color":"rgba(186,217,78,1)"},"error_y":{"color":"rgba(186,217,78,1)"},"error_x":{"color":"rgba(186,217,78,1)"},"line":{"color":"rgba(186,217,78,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[49,35,106,7,122,15,49,106,106,106,49,15,106,106,122,49,106,106,49,35,122,49,49,39,49,106,49,106,122,106,7,106,35,49,35,35,106,35,39,106,35,122,35,106,106,15,49,15,15,49,35,106,106,35,49,122,106,49,7,49],"y":[1,12,9,15,9,9,7,13,30,2,2,7,5,1,10,11,3,19,10,2,25,8,10,7,5,4,5,18,1,2,5,12,1,12,1,12,3,3,17,1,8,9,7,10,2,6,6,5,34,2,18,23,8,21,3,6,7,13,19,16],"mode":"markers","type":"scatter","name":"meat seafood","marker":{"color":"rgba(217,217,66,1)","line":{"color":"rgba(217,217,66,1)"}},"textfont":{"color":"rgba(217,217,66,1)"},"error_y":{"color":"rgba(217,217,66,1)"},"error_x":{"color":"rgba(217,217,66,1)"},"line":{"color":"rgba(217,217,66,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100],"y":[3,3,4,8,11,10,4,32,2,14,3,23,4,14,8,14,16,13,4,18],"mode":"markers","type":"scatter","name":"missing","marker":{"color":"rgba(247,217,52,1)","line":{"color":"rgba(247,217,52,1)"}},"textfont":{"color":"rgba(247,217,52,1)"},"error_y":{"color":"rgba(247,217,52,1)"},"error_x":{"color":"rgba(247,217,52,1)"},"line":{"color":"rgba(247,217,52,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[6,6,6],"y":[27,3,10],"mode":"markers","type":"scatter","name":"other","marker":{"color":"rgba(250,212,80,1)","line":{"color":"rgba(250,212,80,1)"}},"textfont":{"color":"rgba(250,212,80,1)"},"error_y":{"color":"rgba(250,212,80,1)"},"error_x":{"color":"rgba(250,212,80,1)"},"line":{"color":"rgba(250,212,80,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[51,88,17,19,104,110,5,17,19,51,17,88,72,104,110,17,72,51,88,88,105,105,88,104,19,29,88,88,19,5,89,51,19,19,19,89,105,19,19,89,19,19,29,19,110,72,17,72,89,51,19,88,104,72,104,104,88,17,72,97,19,88,88,97,17,88,104,17,110,104,104,19,88,51,110,5,17,29,29,72,88,110,17,88,19,29,105,88,104,72,17,88,110,19,19,88,17,19,88,29,51,17,104,88,104,17,17,88,17,88,17,51,104,88,89,72,89,104,104,17,17,88,104,88,110,72,5,19,5,104,51,88,72,29,88,17,88,17,29,17,19,72,19,51,19,104,51,104,19,104,110,29,105,88,105,5,19,19,17,89,104,5,19,88,104,51,72,88,105,5,72,5,17,72,110,17,110,19,104,104,17,19,17,104,104,104,104,88,88,104,89,17,89,17],"y":[2,6,8,4,5,2,26,10,10,3,6,5,19,7,4,3,6,9,16,17,4,5,6,7,8,12,31,11,9,11,22,11,26,24,8,8,15,22,18,17,4,10,8,8,4,17,7,4,16,1,18,7,19,6,1,12,11,3,9,4,27,4,23,5,27,7,12,4,6,20,5,6,1,4,5,15,11,3,9,8,15,10,1,31,24,3,15,15,33,5,6,13,2,6,28,23,25,5,16,6,9,4,5,24,12,2,9,1,5,11,3,23,3,7,10,11,35,4,14,25,28,3,15,13,1,23,28,9,27,13,2,33,6,3,5,32,1,9,9,6,6,23,18,6,1,12,3,15,1,21,14,24,3,9,28,10,1,7,29,5,17,6,1,6,14,11,2,22,7,7,5,17,5,5,23,3,9,4,11,7,13,2,1,3,36,3,1,17,7,20,20,9,19,4],"mode":"markers","type":"scatter","name":"pantry","marker":{"color":"rgba(241,204,114,1)","line":{"color":"rgba(241,204,114,1)"}},"textfont":{"color":"rgba(241,204,114,1)"},"error_y":{"color":"rgba(241,204,114,1)"},"error_x":{"color":"rgba(241,204,114,1)"},"line":{"color":"rgba(241,204,114,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[127,70,70,126,73,25,47,11,25,65,20,133,11,20,20,126,22,126,127,20,20,20,126,25,80,73,22,127,22,47,22,126,47,20,109,65,70,47,133,11,25,20,65,25,25,25,73],"y":[1,7,6,14,4,20,7,5,22,1,6,1,14,3,1,1,18,4,3,7,3,19,5,1,3,3,7,21,5,3,18,5,1,20,10,2,10,16,5,1,26,5,3,8,3,7,3],"mode":"markers","type":"scatter","name":"personal care","marker":{"color":"rgba(231,197,144,1)","line":{"color":"rgba(231,197,144,1)"}},"textfont":{"color":"rgba(231,197,144,1)"},"error_y":{"color":"rgba(231,197,144,1)"},"error_x":{"color":"rgba(231,197,144,1)"},"line":{"color":"rgba(231,197,144,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[41,41,40,41,41,41,41],"y":[6,17,6,13,10,4,13],"mode":"markers","type":"scatter","name":"pets","marker":{"color":"rgba(215,191,158,1)","line":{"color":"rgba(215,191,158,1)"}},"textfont":{"color":"rgba(215,191,158,1)"},"error_y":{"color":"rgba(215,191,158,1)"},"error_x":{"color":"rgba(215,191,158,1)"},"line":{"color":"rgba(215,191,158,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[24,24,123,123,83,123,83,83,83,123,123,123,24,24,123,24,83,123,83,83,123,83,123,24,123,24,83,83,123,83,83,32,123,16,24,83,123,24,123,83,24,123,24,24,83,83,24,83,24,123,123,83,24,24,83,24,83,123,83,83,24,83,123,24,83,24,83,123,83,83,24,24,123,83,123,24,32,123,24,83,24,123,83,24,83,24,24,24,24,83,24,24,24,83,24,24,83,83,24,16,24,83,16,24,123,123,24,24,24,24,83,32,24,83,24,83,83,24,123,83,24,83,123,123,24,83,83,24,83,83,123,24,83,24,24,123,123,24,123,16,83,32,83,83,16,123,32,123,24,123,83,24,24,83,24,83,24,83,24,83,24,16,83,83,24,24,123,16,16,123,83,83,24,24,83,24,83,83,24,24,24,83,83,123,83,123,83,83,123,24,123,24,123,24,83,24,24,83,24,123,123,83,24,123,24,24,83,24,123,123,83,83,24,83,24,32,83,83,24,83,24,123,123,83,123,83,83,24,83,16,83,83,83,83,123,24,83,24,83,83,24,24,16,24,16,83,83,24,24,24,24,24,123,24,123,32,24,24,83,123,24,123,123,83,24,32,83,123,24,83,32,83,24,123,83,83,24,32,83,24,83,24,24,83,83,24,24,83,24,83,83,24,83,24,24,83,123,83,24,83,83,83,123,24,123,123,83,83,83,123,83,83,24,24,123,24,24,83,123,83,24,24,24,83,24,24,24,24,24,83,83,24,83,83,83,24,83,83,32,83,123,123,24,83,83,83,24,123,24,24,83,123,24,24,24,83,24,83,24,24,24,123,24,123,123,83,24,83,83,24,83,123,83,123,123,83,24,83,83,83,24,83,123,83,123,83,83,83,83,24,83,24,83,83,123,123,24,83,123,83,83,32,123,24,24,123,83,83,83,16,32,24,24,83,123,24,123,24,83,123,83,83,32,83,83,123,83,24,83,123,16,24,83,123,83,123,24,123,83,83,32,123,24,24,83,24,32,83,123,24,24,24,83,83,16,24,123,83,83,83,123,24,24,24,83,83,24,32,24,24,24,83,123,24,123,83,24,24,123,83,123,83,24,24,83,16,83,24,24,123,123,24,123,24,123,24,83,83,83,123,123,83,24,83,83,123,83,24,24,24,16,83,16,24,24,123,83,83,24,123,24,83,123,123,83,83,32,83,123,24,83,24,123,83,83,83,123,83,83,123,24,24,83,24,24,24,24,24,83,32,24,83,83,123,32,24,24,123,24,123,83,123,83,83,24,83,24,83,83,32,24,123,24,83,83,24,83,83,123,83,24,123,24,24,83,24,24,83,24,83,83,123,24,83,123,32,24,83,24,24,123,83,83,24,24,83,24,123,32,24,32,123,24,24,123,32,83,32,83,83,83,83,24,16,24,24,24,123,24,24,24,83,123,24,24,16,123,83,24,24,83,123,16,123,83,24,24,32,24,123,83,24,83,24,83,24,24,123,24,83,83,83,83,24,83,83,83,24,83,83,83,83,123,83,24,123,123,83,123,83,83,24,83,83,24,24,24,83,83,32,24,24,24,123,24,83,83,24,123,24,83,123,24,123,24,83,83,32,83,123,83,83,24,83,83,24,24,83,83,83,24,83,24,123,24,83,24,83,24,123,83,24,83,123,123,83,24,123,24,16,83,24,24,24,83,83,123,83,24,123,24,83,123,83,83,123,24,123,24,123,123,24,24,24,83,24,123,83,83,83,24,24,123,123,83,24,24,24,83,83,24,123,83,123,24,16,16,24,83,123,24,24,123,123,32,83,83,24,123,24,24,24,32,32,83,24,24,24,123,83,83,123,24,83,83,83,83,123,123,83,83,24,16,83,24,83,123,83,123,83,24,83,24,123,83,83,24,24,83,83,24,16,83,83,83,24,123,24,24,24,83,24,123,24,123,24,123,83,83,24,123,24,24],"y":[2,24,6,30,9,12,25,4,8,5,3,10,20,5,16,6,10,1,5,18,13,12,2,5,6,5,23,15,16,1,8,11,20,4,11,14,5,2,1,6,11,5,22,18,1,9,9,2,2,4,13,9,9,3,11,2,12,1,9,21,12,1,14,6,6,10,6,7,16,26,14,6,8,4,5,1,3,9,24,14,1,7,1,11,12,15,11,8,4,18,5,1,24,10,9,4,2,1,18,11,9,13,7,2,8,3,6,3,13,16,18,2,10,1,10,5,5,3,26,25,1,3,6,11,25,8,1,2,10,2,10,12,3,3,9,11,16,5,6,6,18,3,10,15,5,6,1,20,5,4,7,2,9,15,7,7,2,3,12,11,1,4,4,6,4,23,7,9,4,5,10,2,1,2,20,2,3,11,4,1,6,4,18,2,1,7,6,9,11,9,6,11,5,11,5,7,4,3,11,13,3,4,12,2,1,17,8,5,20,11,5,9,3,10,1,3,7,15,6,8,29,8,4,19,3,12,21,7,12,4,8,12,4,9,7,6,11,5,9,6,13,4,13,23,8,5,9,7,8,8,26,2,3,12,5,15,9,1,4,9,15,12,3,10,34,4,13,7,2,15,5,4,9,22,5,2,2,11,5,1,11,3,1,14,2,1,16,17,2,7,8,19,17,5,1,19,14,6,5,7,1,22,5,2,10,1,18,12,23,26,11,10,4,2,22,1,17,6,21,1,11,1,6,17,8,21,12,8,2,7,11,3,9,2,16,2,16,4,1,12,13,9,7,1,6,2,1,18,6,1,2,5,1,8,5,8,13,7,7,15,3,22,12,15,2,12,2,13,2,5,3,3,1,2,10,25,3,20,23,7,10,3,10,3,4,8,1,2,3,4,25,4,11,15,10,11,7,1,14,2,3,27,2,1,7,5,11,7,5,2,1,11,4,7,15,3,2,6,15,15,4,6,1,4,9,4,5,6,5,27,18,9,1,2,4,4,2,16,2,5,2,12,17,7,20,21,4,5,8,4,2,4,12,32,5,4,6,3,6,3,4,1,4,9,17,3,6,13,6,6,4,18,7,4,19,2,1,7,14,3,6,18,7,3,2,19,5,7,6,1,4,5,3,4,4,1,24,11,9,6,24,9,7,11,2,1,12,11,5,1,16,2,2,18,4,2,11,5,13,1,4,4,7,12,12,8,5,12,3,18,3,1,3,20,9,6,9,4,4,4,3,3,4,40,14,17,10,1,23,4,9,13,2,6,4,6,23,4,1,9,18,15,4,6,7,7,15,11,10,7,3,8,11,7,20,2,9,2,2,1,2,14,3,9,19,5,9,5,9,1,20,13,12,12,2,9,2,5,8,6,29,31,1,1,5,3,1,1,2,2,6,8,2,1,9,11,12,6,27,8,2,3,4,9,4,5,2,1,5,11,18,1,6,12,20,17,1,2,4,6,3,2,4,3,21,15,12,3,1,22,18,13,15,2,3,3,8,11,1,11,24,19,11,9,19,12,17,7,16,17,6,20,2,13,3,6,6,1,2,1,18,5,14,11,13,17,1,4,22,1,7,15,7,9,3,2,30,5,8,17,2,6,2,21,6,8,1,4,9,3,5,11,3,7,3,1,8,12,14,13,1,3,3,13,1,6,4,9,10,12,15,10,13,7,12,11,4,5,9,23,7,2,23,3,7,6,8,6,3,9,8,19,3,2,14,2,1,2,4,16,7,8,3,4,7,6,7,6,2,13,1,10,7,1,7,8,15,16,7,9,2,4,9,14,3,4,6,3,15,8,12,5,2,27,2,2,4,4,6,6,11,6,1,4,2,10,4,3,18,8,7,12,6,7,8,5,3,4,9,4,2,3,14,6,4,5,10,7,19,29,2,2,5,9,1,4,14,28,7,2,7,14,3,2,25,1,13,3,9,17,5,7,3,9,6,16,20,32,6,4,9,5,1],"mode":"markers","type":"scatter","name":"produce","marker":{"color":"rgba(198,185,168,1)","line":{"color":"rgba(198,185,168,1)"}},"textfont":{"color":"rgba(198,185,168,1)"},"error_y":{"color":"rgba(198,185,168,1)"},"error_x":{"color":"rgba(198,185,168,1)"},"line":{"color":"rgba(198,185,168,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[45,45,61,107,78,23,78,23,107,107,3,78,107,45,23,107,107,107,78,61,78,45,117,78,117,107,107,45,107,3,3,23,125,78,3,107,50,78,45,107,117,23,107,3,3,3,61,45,78,78,3,78,117,61,78,107,45,117,78,78,107,61,3,50,46,107,50,23,78,107,107,107,23,117,61,78,23,107,78,3,78,117,61,78,107,78,117,117,45,107,78,107,107,107,117,46,45,45,78,3,50,78,117,107,3,107,107,61,78,107,107,107,107,3,107,61,23,117,107,107,45,78,23,23,45,61,107,125,107,117,61,107,107,78,50,3,117,107,3,107,107,78,107,23,117,23,107,107,117,117,78,78,78,45,125,23,78,107,3,45,107,78,61,61,117,45,78,78,78,45,103,23,50,23,107,117,117,3,107,78,107,3,107,107,50,107,107,45,107,107,46,23,78,78,78,3,78,107,78,78,45,107,107,78,117,103,3,3,78,107,78,78,107,78,78,45,107,3,107,50,61,78,61,107,3,61,125,61,107,61,3,3,45,50,78,107,50,117,125,78,107,107,107,107,117,45,3,78,3,107,78,50,78,107,107,45,46,23,107,107,107],"y":[2,4,2,13,13,5,2,1,3,9,8,17,13,9,12,8,3,21,16,3,10,2,13,42,11,18,2,4,5,5,6,12,26,9,15,4,16,7,18,5,2,10,33,6,20,6,1,22,3,8,1,3,7,15,3,9,1,7,14,8,13,5,2,4,6,2,4,2,9,4,12,21,2,1,40,8,17,5,9,22,29,15,4,3,5,29,13,2,1,13,6,7,13,22,38,14,16,3,3,1,4,6,3,14,7,19,15,7,7,3,16,3,7,4,4,1,12,9,17,3,4,7,13,8,2,5,8,1,8,16,23,2,12,2,8,17,20,13,4,19,12,1,7,3,3,3,13,5,5,8,22,9,7,13,20,1,2,30,1,2,8,19,11,18,11,20,25,3,22,12,8,12,6,8,6,2,5,2,2,6,2,13,8,6,1,2,8,2,2,4,38,15,12,4,12,8,18,1,10,1,9,8,4,2,3,13,8,17,1,2,3,52,5,6,12,11,14,11,6,32,6,20,13,13,12,13,5,4,22,4,5,14,25,2,5,9,10,2,32,5,15,8,2,3,11,1,57,13,17,15,5,3,2,3,3,1,2,15,13,17,6],"mode":"markers","type":"scatter","name":"snacks","marker":{"color":"rgba(179,179,179,1)","line":{"color":"rgba(179,179,179,1)"}},"textfont":{"color":"rgba(179,179,179,1)"},"error_y":{"color":"rgba(179,179,179,1)"},"error_x":{"color":"rgba(179,179,179,1)"},"line":{"color":"rgba(179,179,179,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+</div>
+
+<script>
+$(document).ready(function() {
+  // add bootstrap table styles to pandoc tables
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed table-sm');
+
+  // initialize mathjax
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+  document.getElementsByTagName("head")[0].appendChild(script);
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  FlexDashboard.init({
+    fillPage: true,
+    orientation: "columns",
+    storyboard: false,
+    defaultFigWidth: 576,
+    defaultFigHeight: 460,
+    defaultFigWidthMobile: 360,
+    defaultFigHeightMobile: 460,
+    resize_reload: true
+  });
+  var navbar = $(".navbar").first();
+  var body = $("body").first();
+  var sidebar = $(".section.sidebar").first();
+  function addNavbarPadding() {
+    var navHeight = navbar.outerHeight();
+    body.css("padding-top", (navHeight + 8) + "px");
+    sidebar.css("top", navHeight + "px");
+    var resizeEvent = window.document.createEvent("UIEvents");
+    resizeEvent.initUIEvent("resize", true, false, window, 0);
+    window.dispatchEvent(resizeEvent);
+  }
+  if (!window.Shiny) setTimeout(addNavbarPadding, 100);
+  $(document).on("shiny:idle", function() {
+    setTimeout(addNavbarPadding, 50);
+  });
+});
+</script>
+
+</body>
+</html>
